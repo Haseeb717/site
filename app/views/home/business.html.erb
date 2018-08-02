@@ -1,0 +1,99 @@
+<section class="content empresarial-holder">
+  <div class="container">
+    <div class="row title-row">
+      <div class="col-sm-8 col-md-5 col-xs-12">
+        <h1>COMERCIAL</h1>
+      </div>
+      <div class="col-sm-4 col-xs-12 col-text no-padding">
+        <p>As cortinas do Teatro Santander se abrem para propostas de eventos e parcerias.</p>
+      </div>
+    </div>
+
+    <div class="row form-row">
+      <div class="col-sm-5 col-xs-12">
+        <form>
+          <div class="form-group">
+            <input type="text" class="form-control input-nome-empresa" id="nomeEmpresa" placeholder="Nome da empresa">
+          </div>
+          <div class="form-group">
+            <input type="text" class="form-control input-nome-responsavel" id="nomeResponsavel" placeholder="Nome do responsável">
+          </div>
+          <div class="form-group">
+            <input type="email" class="form-control input-email" id="email" placeholder="Email">
+          </div>
+          <div class="form-group">
+            <input type="text" class="form-control input-telefone" id="telefone" placeholder="Telefone">
+          </div>
+          <div class="form-group">
+            <select>
+              <option disabled selected value="convencao">Tipo de Evento</option>
+              <option value="convencao">Convenção</option>
+              <option value="desfile">Desfile</option>
+              <option value="exposicao">Exposição</option>
+              <option value="feira">Feira</option>
+              <option value="musical">Musical</option>
+              <option value="palestra">Palestra</option>
+              <option value="show">Show</option>
+              <option value="teatro">Teatro</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <input type='text' class="form-control input-data" placeholder="Data do Evento" id='datetimepicker'>
+          </div>
+          <div class="form-group">
+            <input type='number' class="form-control input-participantes" placeholder="Número de participantes">
+          </div>
+          <div class="form-group">
+            <textarea class="form-control input-observacoes" placeholder="Observações" id='datetimepicker'></textarea>
+          </div>
+          <button type="submit" class="btn">Enviar</button>
+        </form>
+      </div>
+      <div class="col-sm-6 col-xs-12">
+        <div id="slider-secundario-box" class="carousel slide">
+
+          <!-- Wrapper for slides -->
+          <div class="carousel-inner" role="listbox">
+
+            <div class="item active">
+              <%= image_tag 'empresarial/slider-1.jpg', class: 'img-responsive center-block', alt: 'Evento Musicais e Dramaturgia Teatro Santander' %>
+
+              <div class="carousel-caption">
+                <p class="evento-tipo">Musicais e Dramaturgia</p>
+                <p class="evento-lotacao">1100 pessoas sentadas</p>
+              </div>
+            </div>
+
+            <div class="item">
+              <%= image_tag 'empresarial/slider-2.jpg', class: 'img-responsive center-block', alt: 'Evento Desfiles Teatro Santander' %>
+
+              <div class="carousel-caption">
+                <p class="evento-tipo">Desfiles</p>
+                <p class="evento-lotacao">800 pessoas sentadas</p>
+              </div>
+            </div>
+
+            <div class="item">
+              <%= image_tag 'empresarial/slider-3.jpg', class: 'img-responsive center-block', alt: 'Eventos Teatro Santander' %>
+
+              <div class="carousel-caption">
+                <p class="evento-tipo">Eventos</p>
+                <p class="evento-lotacao">400 pessoas sentadas</p>
+              </div>
+            </div>
+
+            <div class="item">
+              <%= image_tag 'empresarial/slider-4.jpg', class: 'img-responsive center-block', alt: 'Evento Shows Teatro Santander' %>
+
+              <div class="carousel-caption">
+                <p class="evento-tipo">Shows</p>
+                <p class="evento-lotacao">1.800 pessoas no total (em pé e sentadas)</p>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

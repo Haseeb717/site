@@ -1,0 +1,61 @@
+
+/**
+ * Vendors
+ */
+@import "vendors/bootstrap";
+@import "vendors/swiper";
+@import "vendors/animate";
+@import "vendors/bootstrap-datepicker";
+@import "vendors/simplelightbox.min";
+@import "vendors/owl.carousel";
+@import "vendors/owl.theme";
+@import "vendors/owl.transitions";
+@import "vendors/jquery.fancybox";
+
+// /** 
+// * Globals
+// */
+@import "globals/fonts";
+@import "globals/variables";
+
+// /**
+// * Modules
+// */
+@import "modules/header";
+@import "modules/cards";
+@import "modules/sliders";
+@import "modules/buttons";
+@import "modules/tabs";
+@import "modules/accordion";
+@import "modules/footer";
+
+// /**
+// * Pages
+// */
+@import "pages/home";
+@import "pages/programacao";
+@import "pages/programacao-detalhe";
+@import "pages/aconteceu";
+@import "pages/about";
+@import "pages/acessibilidade";
+@import "pages/bilheteria";
+@import "pages/contato";
+@import "pages/empresarial";
+@import "pages/imprensa";
+@import "pages/faq";
+@import "pages/login";
+@import "pages/busca";
+
+/**
+* Globals
+*/
+@import "globals/general";
+
+.swiper-container-big .swiper-slide .top_know_more{
+  top: 55% !important;
+}
+
+.event-holder .event-image-col .destaque-holder .destaque-title-top{
+  top: 65% !important;
+}
+

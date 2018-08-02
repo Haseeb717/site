@@ -1,0 +1,5 @@
+/*
+ Copyright (c) 2003-2015, CKSource - Frederico Knabben. All rights reserved.
+ For licensing, see LICENSE.md or http://ckeditor.com/license
+*/
+CKEDITOR.plugins.setLang("filetools","fr",{loadError:"Une erreur est survenue lors de la lecture du fichier.",networkError:"Une erreur r\xe9seau est survenue lors du t\xe9l\xe9versement du fichier.",httpError404:"Une erreur HTTP est survenue durant le t\xe9l\xe9versement du fichier (404: Fichier non trouv\xe9).",httpError403:"Une erreur HTTP est survenue durant le t\xe9l\xe9versement du fichier (403: Acc\xe8s refus\xe9).",httpError:"Une erreur HTTP est survenue durant le t\xe9l\xe9versement du fichier (statut de l'erreur : %1).",noUrlError:"L'URL de t\xe9l\xe9versement n'est pas sp\xe9cifi\xe9e.",responseError:"R\xe9ponse du serveur incorrecte."});

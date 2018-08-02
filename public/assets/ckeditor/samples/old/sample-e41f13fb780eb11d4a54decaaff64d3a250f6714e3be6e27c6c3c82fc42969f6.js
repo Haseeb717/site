@@ -1,0 +1,5 @@
+/**
+ * Copyright (c) 2003-2015, CKSource - Frederico Knabben. All rights reserved.
+ * For licensing, see LICENSE.md or http://ckeditor.com/license
+ */
+!function(){CKEDITOR.on("instanceReady",function(e){var t=e.editor,n=CKEDITOR.document.$.getElementsByName("ckeditor-sample-required-plugins"),o=n.length?CKEDITOR.dom.element.get(n[0]).getAttribute("content").split(","):[],i=[],l;if(o.length){for(l=0;l<o.length;l++)t.plugins[o[l]]||i.push("<code>"+o[l]+"</code>");if(i.length){CKEDITOR.dom.element.createFromHtml('<div class="warning"><span>To fully experience this demo, the '+i.join(", ")+" plugin"+(i.length>1?"s are":" is")+" required.</span></div>").insertBefore(t.container)}}var r=new CKEDITOR.dom.document(document),d=r.find(".button_icon");for(l=0;l<d.count();l++){var s=d.getItem(l),a=s.getAttribute("data-icon"),c=CKEDITOR.skin.getIconStyle(a,"rtl"==CKEDITOR.lang.dir);s.addClass("cke_button_icon"),s.addClass("cke_button__"+a+"_icon"),s.setAttribute("style",c),s.setStyle("float","none")}})}();

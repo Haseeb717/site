@@ -1,0 +1,61 @@
+.acessibility{
+  margin: 120px 0 80px;
+  h1{
+    color: #ed2228;
+    font-weight: 900;
+    letter-spacing: 9px;
+    line-height: 1;
+    display: block;
+    width: 90%;
+    padding: 0px 0px 19px 0px;
+    margin: 0;
+    border-right: 2px solid #ed2228;
+  }
+  .card-acessibility{
+    background-color: #fafafa;
+    padding: 20px 10px;
+    height: 300px;
+    margin: 0 0 40px;
+    border-radius: 5px;
+  }
+  .box-icon{
+    height: 100px;
+    display: flex;
+    align-items: center;
+    position: relative;
+    margin-bottom: 10px;
+    &:after{
+      content: '';
+      position: absolute;
+      height: 3px;
+      width: 20%;
+      background-color: #ed2228;
+      left: 0;
+      bottom: 0;
+    }
+  }
+  @media (max-width: $screen-md-max) {
+    .card-acessibility{
+      height: 350px;
+    }
+  }
+  @media (max-width: $screen-sm-max) {
+    h1{
+      border: none;
+      margin-top: 50px;
+    }
+    .card-acessibility{
+      height: auto;
+    }
+  }
+  @media (max-width: $screen-xs-max) {
+    h1{
+      font-size: 30px;
+    }
+  }
+  @media (max-width: 460px) {
+    h1{
+      font-size: 18px;
+    }
+  }
+}

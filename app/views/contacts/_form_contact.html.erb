@@ -1,0 +1,43 @@
+<div class="col-sm-12 col-xs-12">
+  <%= form_for @contact, url: { action: "create" }, remote: "true", html: { class: 'form-horizontal send_ajax', role: :form, 'data-model' => @contact.class.name.downcase, id: 'form-contact' } do |f| %>
+  <div class="status-message" style="display:none;">Mensagem enviada com sucesso</div>
+
+  <div class="row">
+    <div class="col-sm-5 col-xs-12">
+      <div class="form-group">
+        <div>
+          <span class="sr-only"><%= f.label :name %></span>
+          <%= f.text_field :name,  class: 'form-control input-nome', placeholder: 'Nome' %>
+          <span class="help-block"></span>
+        </div>
+
+        <div>
+          <span class="sr-only"><%= f.label :email %></span>
+          <%= f.email_field :email, class: 'form-control input-email', placeholder: 'E-mail' %>
+          <span class="help-block"></span>
+        </div>
+
+        <div>
+          <span class="sr-only"><%= f.label :subject %></span>
+          <%= f.collection_select(:subject_id, Subject.all.order(:name), :id, :name, :prompt => 'Escolha um assunto') %>
+          <span class="help-block"></span>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-sm-7 col-xs-12">
+      <div class="form-group">
+        <div>
+          <span class="sr-only"><%= f.label :message %></span>
+          <%= f.text_area :message, class: 'form-control input-mensagem', placeholder: 'Mensagem' %>
+          <span class="help-block"></span>
+        </div>
+
+          <%= f.submit 'Enviar', class: 'btn btn-red' %>
+      </div>
+    </div>
+  </div>
+
+  <% end %>
+
+</div>

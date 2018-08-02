@@ -1,0 +1,45 @@
+    <section class="contact-form-section">
+  <div class="container">
+
+    <div class="row title-row">
+      <div class="col-sm-6 col-md-5 col-lg-4 col-xs-12">
+        <h1>Contato</h1>
+      </div>
+      <div class="col-sm-4 col-xs-12 col-text no-padding">
+        <p>O Teatro Santander possui diferentes canais de contato para que você possa obter as informações que precisa. </p>
+      </div>
+    </div>
+
+    <div class="row form-row">
+
+      <%= render 'form_contact' %>
+
+    </div>
+  </div>
+</section>
+
+<section class="map-section">
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-sm-6 col-xs-12 no-padding">
+        <div id="map"></div>
+      </div>
+
+      <div class="col-sm-3 col-xs-12 col-info">
+        <div class="contato-info-box" data-line="___">
+          <!-- <p><strong>Telefone:</strong> (11) 3333.3333</p> -->
+          <p><strong>E-mail:</strong><br> sac@teatrosantander.com.br</p>
+          <p><strong>E-mail comercial:</strong><br> eventos@teatrosantander.com.br</p>
+          <p class="deadline">O prazo para retorno é de até 48h, apenas em dias úteis, das 09:30 às 19:00.</p>
+          <h4><strong>Informações Teatro:</strong></h4>
+          <p>(11) 4810-6868</p>
+          <p class="local-horario-title"><strong>Horário de atendimento:</strong><br>
+          Segunda a Sexta-feira das 9h às 18h.</p>
+          <p><strong>Endereço:</strong><br>Av. Presidente Juscelino Kubitschek, 2041 - Itaim Bibi, São Paulo - SP</p>
+        </div>
+
+        <a target="_blank" href="https://www.google.com.br/maps/dir//Av.+Pres.+Juscelino+Kubitschek,+2041+-+Itaim+Bibi,+S%C3%A3o+Paulo+-+SP,+04543-011/@-23.5908354,-46.6903854,19z/data=!4m13!1m4!3m3!1s0x94ce573f57131795:0xa65be7a0a43670d4!2sAv.+Pres.+Juscelino+Kubitschek,+2041+-+Itaim+Bibi,+S%C3%A3o+Paulo+-+SP,+04543-011!3b1!4m7!1m0!1m5!1m1!1s0x94ce573f57131795:0xa65be7a0a43670d4!2m2!1d-46.6898382!2d-23.5908366" class="btn-como-chegar" data-line-after="___">COMO CHEGAR <span><%= image_tag 'red-seta.png', class: 'img-responsive', alt: 'Seta Como Chegar Teatro' %></span></a>
+      </div>
+    </div>
+  </div>
+</section>

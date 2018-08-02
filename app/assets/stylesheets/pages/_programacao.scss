@@ -1,0 +1,216 @@
+
+.programacao-destaque {
+  margin-top: 120px;
+
+  .title-row {
+    margin-bottom: 15px;
+  }
+
+  h1 {
+    color: $red;
+    font-weight: $black;
+    letter-spacing: 9px;
+    line-height: 1;
+    display: block;
+    padding: 0px 0px 19px 0px;
+    margin: 0;
+    border-right: 2px solid $red;
+    width: 97%;
+  }
+
+}
+
+.calendar-col {
+
+  .swiper-calendar {
+    width: 100%;
+    height: 150px;
+
+    .calendar-slide {
+      text-align: center;
+
+      .date-box {
+        background-color: #fafafa;
+        padding: 3px 0;
+        cursor: pointer;
+        margin-bottom: 10px;
+        transition: all .3s ease-in-out;
+
+        p {
+          margin: 0;
+          font-size: $font-13;
+          font-weight: $bold;
+        }
+
+        &:hover, &:active, &:focus {
+          background-color: $red;
+          color: #fff;
+        }
+      }
+
+      .calendar-day-events {
+        width: 100%;
+        max-height: 110px;
+        position: absolute;
+        left: 0;
+        border-left: 2px solid $red;
+        display: none;
+        overflow: scroll;
+        padding-left: 5px;
+        ul {
+          list-style: none;
+          padding: 0;
+
+          li {
+            a {
+              text-decoration: underline;
+              font-size: $font-14;
+              font-style: italic;
+              color: $color-font;
+
+              span {
+                font-size: 1em;
+                font-weight: $bold;
+              }
+            }
+          }
+        }
+
+        &.show {
+          display: block;
+        }
+      }
+    }
+  }
+
+  .swiper-button-prev {
+    background-image: asset-url('programacao/arrow-left.png');
+    background-size: initial;
+    left: -20px;
+    top: 20px;
+  }
+
+  .swiper-button-next {
+    background-image: asset-url('programacao/arrow-right.png');
+    background-size: initial;
+    right: -20px;
+    top: 20px;
+  }
+}
+
+.event-box {
+  background-color: #fafafa;
+  border-bottom: 2px solid $gray-39;
+  margin: 0 0 45px;
+  transition: all .5s ease-in-out;
+
+  .row {
+    margin: 0;
+  }
+  .event-image {
+    overflow: hidden;
+    img {
+      width: 100%;
+      transition: all .5s ease-in-out;
+    }
+    .btn {
+      font-size: $font-13;
+      background-color: rgba(255, 255, 255, 0.8);
+      width: 100%;
+      color: $color-font;
+      position: absolute;
+      bottom: -2px;
+      transition: all .5s ease-in-out;
+    }
+  }
+
+  .event-about {
+    padding: 9px 21px;
+
+    .event-pre-title {
+      font-size: $font-14;
+      font-weight: $bold;
+      color: $red;
+      margin-bottom: 20px;
+
+      .gray {
+        color: #cccccc;
+      }
+
+    }
+
+    .event-title {
+      font-size: $font-18;
+      font-weight: $black;
+      color: $gray-39;
+      margin: 0 0 20px;
+      transition: all .5s ease-in-out;
+    }
+
+    .event-text {
+      color: #959595;
+      margin-bottom: 20px;
+    }
+  }
+
+  //Hover Evento Box
+  &:hover {
+    border-bottom: 2px solid $red;
+    text-decoration: none;
+    .event-about {
+      .event-title {
+        color: $red;
+      }
+    }
+
+    .event-image {
+      img {
+        transform: scale(1.01);
+      }
+      .btn {
+        background-color: rgba(237, 34, 40, 0.8);
+        color: #FFF;
+      }
+    }
+  }
+}
+
+@media (max-width: $screen-xs-max) {
+  .programacao-destaque {
+    h1 {
+      letter-spacing: initial;
+      padding: 0;
+      width: 100%;
+      font-size: 1.625em;
+      margin-top: 40px;
+    }
+  }
+}
+
+
+@media (max-width: $screen-sm-max) {
+  .programacao-destaque {
+    margin-top: 90px;
+
+    h1 {
+      margin-bottom: 20px;
+    }
+  }
+  .calendar-col {
+    .swiper-button-prev {
+      left: 0px;
+    }
+
+    .swiper-button-next {
+      right: 0px;
+    }
+  }
+
+  .event-box {
+    .event-image {
+      .btn {
+        font-size: $font-12;
+      }
+    }
+  }
+}

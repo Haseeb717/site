@@ -1,0 +1,142 @@
+  <!-- <h1>Home#index</h1>
+<p>Find me in app/views/home/index.html.erb</p> -->
+<% if @featureds.present? %>
+<section class="content home-slider">
+  <div class="container-fluid">
+    <div class="row">
+      <!-- Swiper -->
+      <div class="swiper-container swiper-container-big">
+        <div class="swiper-wrapper">
+          <% @featureds.each do |featured| %>
+          <div class="swiper-slide" style="background-image: url(<%= featured.image.url(:standard) %>)">
+            <div class="container slider-stats <%= top_know_more if featured.id.to_i == 22 %>">
+              <div class="slider-stats">
+                <p class="stats-pre-text" data-swiper-parallax="-200%" data-swiper-parallax-duration="400"><%= featured.description_date %></p>
+                <% if featured.show_title_banner_home %>
+                  <h2 class="stats-title" data-swiper-parallax="-200%" data-swiper-parallax-duration="500"><%= featured.title %></h2>
+                <% end %>
+                <% if featured.description_date.present? %>
+                <% end %>
+                <div class="container">
+                  <div class="row">
+                    <div class="col-sm-4 col-md-3 col-xs-12">
+                      <a href="<%= featured.url %>"  <%= "target='_blank'" if featured.target_blank %> class="stats-btn btn btn-white">Saiba mais</a>
+                    </div>
+                    <div class="col-sm-7 col-md-6 col-lg-5 col-xs-12" data-swiper-parallax="-300%" data-swiper-parallax-duration="600">
+                      <p class="stats-about">
+                        <%= featured.subtitle %>
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="slider-shadow"></div>
+          </div>
+          <% end %>
+        </div>
+        <!-- Add Pagination -->
+        <div class="swiper-pagination"></div>
+      </div>
+    </div>
+  </div>
+</section>
+<% end %>
+<section class="content home-banner">
+  <div class="container">
+    <div class="col-sm-12">
+      <a href="https://www.santander.com.br/br/cartaoaa?ic=aateatrosantander:teatrosantander:organico" onClick="gtag('event', 'Banner Cartao', { 'send_to': 'UA-74766673-1', 'event_category': 'clique', 'event_label': 'botao' });" target="_blank">
+        <div class="outer-white">
+          <figure>
+            <%= image_tag "home/cartaoAA_vs02_1142x330.jpg", class: 'img-responsive', alt: "Com os cartões Santander, você aproveita todos eles com descontos" %>
+          </figure>
+        </div>
+      </a>
+    </div>
+  </div>
+</section>
+
+<section class="content home-programacao">
+  <div class="container card-container card-sac">
+    <div class="row">
+      <div class="col-sm-6 col-md-4 col-xs-12">
+        <a href="<%= box_office_path %>">
+          <div class="outer-white">
+            <figure class="effect-zoe">
+              <%= image_tag "new-version/sac1.jpg", class: 'img-responsive', alt: "como comprar" %>
+            </figure>
+          </div>
+          <div class="box-text">
+            <%= link_to "Como comprar", box_office_path, class: 'button btn-how-buy'  %>
+          </div>
+        </a>
+      </div>
+      <div class="col-sm-6 col-md-4 col-xs-12">
+        <a href="<%= business_path %>">
+          <div class="outer-white">
+            <figure class="effect-zoe">
+              <%= image_tag "new-version/sac2.jpg", class: 'img-responsive', alt: "" %>
+            </figure>
+          </div>
+          <div class="box-text">
+            <%= link_to "Faça seu evento", business_path, class: 'button btn-do-event'  %>
+          </div>
+        </a>
+      </div>
+      <div class="col-sm-6 col-md-4 col-xs-12">
+        <a target="_blank" href="https://www.google.com.br/maps/dir//Av.+Pres.+Juscelino+Kubitschek,+2041+-+Itaim+Bibi,+S%C3%A3o+Paulo+-+SP,+04543-011/@-23.5908354,-46.6903854,19z/data=!4m13!1m4!3m3!1s0x94ce573f57131795:0xa65be7a0a43670d4!2sAv.+Pres.+Juscelino+Kubitschek,+2041+-+Itaim+Bibi,+S%C3%A3o+Paulo+-+SP,+04543-011!3b1!4m7!1m0!1m5!1m1!1s0x94ce573f57131795:0xa65be7a0a43670d4!2m2!1d-46.6898382!2d-23.5908366">
+          <div class="outer-white">
+            <figure class="effect-zoe">
+              <%= image_tag "new-version/sac3.jpg", class: 'img-responsive', alt: "" %>
+            </figure>
+          </div>
+          <div class="box-text">
+            <a target="_blank" href="https://www.google.com.br/maps/dir//Av.+Pres.+Juscelino+Kubitschek,+2041+-+Itaim+Bibi,+S%C3%A3o+Paulo+-+SP,+04543-011/@-23.5908354,-46.6903854,19z/data=!4m13!1m4!3m3!1s0x94ce573f57131795:0xa65be7a0a43670d4!2sAv.+Pres.+Juscelino+Kubitschek,+2041+-+Itaim+Bibi,+S%C3%A3o+Paulo+-+SP,+04543-011!3b1!4m7!1m0!1m5!1m1!1s0x94ce573f57131795:0xa65be7a0a43670d4!2m2!1d-46.6898382!2d-23.5908366" class="button btn-how-come">Como chegar</a>
+          </div>
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<% if @advertisings.present? %>
+<section class="content slider-secundario">
+  <div class="container">
+    <div class="row">
+      <div class="col-sm-12 col-xs-12">
+        <h1 class="slider-secundario-title"><span>Teatro</span> Santander</h1>
+      </div>
+    </div>
+  </div>
+  <div class="container-fluid">
+    <div class="row">
+      <div id="slider-secundario-box" class="carousel slide">
+        <div class="carousel-inner" role="listbox">
+            <% @advertisings.each_with_index do |advertising, index| %>
+          <div class="item <%= "active" if index == 0 %>">
+            <div class="carousel-caption">
+              <div class="row">
+                <div class="col-md-6 col-sm-6 col-xs-12 slider-n slider-n1 hidden-xs" data-animation="animated lightSpeedIn">
+                    <%= image_tag "new-version/img-slider-secundario#{index+1}.jpg", class: 'img-responsive', alt: "Numero#{index+1}" %>
+                </div>
+                <div class="col-md-5 col-md-offset-1 col-sm-6 col-xs-12 slider-data">
+                  <h2 data-animation="animated flipInX">
+                    <%= advertising.title %>
+                  </h2>
+                  <p data-animation="animated flipInX">
+                    <%= advertising.subtitle %>
+                  </p>
+                  <% if advertising.url.present? %>
+                    <a href="<%= advertising.url %>" class="btn btn-dark">Saiba Mais</a>
+                  <% end %>
+                </div>
+              </div>
+            </div>
+          </div>
+          <% end %>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<% end %>

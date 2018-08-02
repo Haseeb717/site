@@ -1,0 +1,107 @@
+.imprensa-holder {
+  margin: 120px 0 80px;
+
+  h1 {
+    color: $red;
+    font-weight: $black;
+    letter-spacing: 9px;
+    line-height: 1;
+    display: block;
+    width: 90%;
+    padding: 0px 0px 19px 0px;
+    margin: 0;
+    border-right: 2px solid $red;
+  }
+
+  p {
+    color: $color-font-light;
+  }
+
+  .title-row {
+    margin-bottom: 30px;
+  }
+
+  .release-holder {
+    padding: 25px 30px 35px;
+    margin-bottom: 28px;
+    background-color: #fafafa;
+
+    p {
+      margin: 0;
+    }
+
+    hr {
+      border: none;
+      height: 2px;
+      background-color: $red;
+      margin: 3px 0 10px;
+      width: 72px;
+    }
+
+    .release-title {
+      font-weight: $black;
+    }
+
+    .release-date {
+      font-weight: $bold;
+      color: $red;
+    }
+
+    .release-text {
+      font-weight: $bold;
+    }
+  }
+
+  .side-col {
+
+    h3 {
+      font-size: 1.500em;
+      font-weight: $black;
+      font-style: italic;
+      text-align: center;
+    }
+
+    .teatro-release-holder, .infos-holder {
+      padding: 35px 30px 45px;
+      margin-bottom: 10px;
+      background-color: #fafafa;
+      text-align: center;
+
+      .btn {
+        box-shadow: 0px 8px 20px 0px rgb( 213, 214, 217 );
+      }
+
+      .info-item {
+        .info-subtitle {
+          font-size: $font-14;
+          color: $red;
+          font-weight: $black;
+        }
+
+        .info-text {
+          color: $color-font-light;
+          font-weight: $bold;
+          font-size: $font-18;
+        }
+      }
+    }
+  }
+
+}
+
+@media (max-width: $screen-xs-max) {
+  .imprensa-holder {
+    h1 {
+      font-size: 1.625em;
+      margin-bottom: 10px;
+    }
+
+    .title-row {
+      margin-bottom: 30px;
+
+      .col-text {
+        padding: 0 15px !important;
+      }
+    }
+  }
+}

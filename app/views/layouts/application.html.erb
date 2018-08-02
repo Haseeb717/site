@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+  <%= display_meta_tags :site => 'Teatro Santander' %>
+
+  <%= favicon_link_tag 'favicon.png' %>
+  <%= stylesheet_link_tag 'application', media: 'all' %>
+  <%= javascript_include_tag 'application'  %>
+
+  <script src="https://maps.googleapis.com/maps/api/js?callback=initMap" async defer></script>
+  <%= csrf_meta_tags %>
+  <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+    <!-- Facebook Pixel Code -->
+  <script>
+    !function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+    n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;
+    n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;
+    t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,
+    document,'script','https://connect.facebook.net/en_US/fbevents.js');
+    fbq('init', '598975676871729');
+    fbq('track', 'PageView');
+  </script>
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-74766673-1"></script>
+  <script>
+   window.dataLayer = window.dataLayer || [];
+   function gtag(){dataLayer.push(arguments);}
+   gtag('js', new Date());
+
+   gtag('config', 'UA-74766673-1');
+  </script>
+  <!-- Global site tag (gtag.js) - Google AdWords: 820609263 -->
+
+  <script async src="https://www.googletagmanager.com/gtag/js?id=AW-820609263"></script>
+  <script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'AW-820609263');
+  </script>
+  <noscript><img height="1" width="1" style="display:none" src="https://www.facebook.com/tr?id=598975676871729&ev=PageView&noscript=1"/></noscript>
+  <!-- DO NOT MODIFY -->
+  <!-- End Facebook Pixel Code -->
+</head>
+<body>
+<header class="header <%= show_icon_larger %>">
+
+  <section class="section-menu" id="Prospero">
+    <span class="link-copy"></span>
+    <nav class="navbar navbar-default navbar-fixed-top">
+      <div class="container">
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="col-md-3 col-sm-4 col-xs-4 flex hidden-sm hidden-xs">
+          <div class="menu">
+            <%= link_to "Menu", "javascript:void(0)", class: 'link-menu' %>
+          </div>
+          <div class="search">
+            <a href="javascript:void(0)" class="link-search">
+              <%= image_tag 'new-version/icon-search.png', class: 'img-responsive menu__link menu-link-busca', alt: 'Buscar' %>
+            </a>
+          </div>
+        </div>
+        <div class="col-md-6 col-xs-8">
+          <div class="logo-header">
+            <%= link_to (image_tag 'logo-footer.png', class: 'img-responsive logo-santander-header', alt: 'Teatro Santander'), root_path %>
+          </div>
+        </div>
+        <div class="col-md-3 hidden-sm hidden-xs flex">
+          <div class="do-event">
+            <%= link_to business_path do  %>
+              Faça seu<br>evento
+            <% end  %>
+          </div>
+          <div class="buy-ticket">
+            <a href="javascript:void(0)" class="cta-buy">Comprar<br>Ingressos</a>
+            <div class="box-buy-ticket">
+              <% unless @featureds.nil? %>
+              <ul>
+                <% @featureds.each do |featured| %>
+                <li class="event-buy firt-event-buy">
+                  <div class="box-img">
+                    <%= image_tag featured.image.url(:mini), class: 'img-responsive', alt: '' %>
+                  </div>
+                  <div class="box-text">
+                      <h3><%= featured.title  %></h3>
+                      <p><%= featured.subtitle.present? ? truncate(featured.subtitle, :length => 100) : '' %></p>
+                      <%= link_to "Comprar", featured.url, class: "btn-buy" %>
+                  </div>
+                </li>
+
+                <% end %>
+
+              </ul>
+              <% end %>
+              <%= link_to "Ver todos", events_path, class: "see-all-events"  %>
+            </div>
+          </div>
+        </div>
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-collapse-3">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <!-- <a class="navbar-brand" href="<%= root_path %>"></a> -->
+        </div>
+        <div class="box-menu">
+          <div class="container">
+            <div class="collapse navbar-collapse" id="navbar-collapse-3">
+              <ul class="menu__list">
+                <li class="menu__item"><a href="<%= about_path %>" class="menu__link">Teatro</a></li>
+                  <li class="dropdown menu__item">
+                    <a href="#" class="menu__link" id="menu-programacao" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Programação <span class="caret"></span></a>
+                    <ul class="dropdown-menu">
+                      <li><a href="<%= events_path %>" class="menu__link">Em exibição</a></li>
+                      <li><a href="<%= previous_events_path %>" class="menu__link">Aconteceu</a></li>
+                    </ul>
+                  </li>
+                  <li class="dropdown menu__item">
+                    <a href="#" class="menu__link" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Bilheteria <span class="caret"></span></a>
+                    <ul class="dropdown-menu">
+                      <li><a href="<%= box_office_path %>" class="menu__link">Bilheteria</a></li>
+                      <li><a href="<%= map_path %>" class="menu__link">Mapa de Plateia</a></li>
+                    </ul>
+                  </li>
+                  <li class="menu__item"><a href="<%= business_path %>" class="menu__link">Comercial</a></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <!-- Collect the nav links, forms, and other content for toggling -->
+
+    </nav>
+
+    <div class="box-busca">
+      <div class="container">
+        <div class="row">
+          <div class="col-sm-12">
+
+           <form action="<%= search_path %>" method="get">
+              <div class="form-group">
+                <%= text_field_tag 'term', params[:term], placeholder: 'Buscar', type: 'search', class: 'form-control' %>
+
+              </div>
+              <input type="submit" class="btn" value=">">
+            </form>
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</header>
+
+<body>
+
+  <%= yield %>
+
+</body>
+
+<footer>
+  <div class="container">
+    <div class="row">
+      <div class="col-md-10 col-md-offset-1">
+        <ul class="footer-menu">
+          <li><%= link_to "Acessibilidade", acessibility_path, class: controller_name == "acessibility" && action_name == "index" ? "active" : "" %>
+          <li><%= link_to "Imprensa", press_path, class: controller_name == "home" && action_name == "press" ? "active" : "" %>
+          <li><%= link_to "FAQ", frequently_askeds_path, class: controller_name == "home" && action_name == "frequently_askeds" ? "active" : "" %>
+          <li><%= link_to "Contato", contact_path, class: controller_name == "contacts" && action_name == "index" ? "active" : "" %>
+        </ul>
+      </div>
+      <div class="col-sm-7 col-xs-12 col-newsletter">
+        <div class="input-group">
+          <%= render  "shared/form_newsletter" %>
+          <p>Cadastre-se para receber nossa newsletter e participar de promoções.</p>
+        </div>
+      </div>
+      <div class="col-sm-4 col-xs-12 col-sm-push-1 col-social">
+        <h2>Redes Sociais</h2>
+        <p>Acesse nossos canais nas redes sociais.</p>
+        <a href="https://www.facebook.com/teatrosantander" target="_blank"><%= image_tag 'icon-facebook.png', alt: 'Facebook Teatro Santander' %></a>
+        <a href="https://twitter.com/teatrosantander" target="_blank"><%= image_tag 'icon-twitter.png', alt: 'Twitter Teatro Santander' %></a>
+        <a href="https://www.instagram.com/teatrosantander/" target="_blank"><%= image_tag 'icon-insta.png', alt: 'Instagram Teatro Santander' %></a>
+        <!-- <a href="#" target="_blank"><%= image_tag 'icon-plus.png', alt: 'Google Plus Teatro Santander' %></a> -->
+
+        <p class="footer-endereco">
+          Av. Presidente Juscelino Kubitschek, 2041 <br>
+          Bairro Itaim Bibi - São Paulo/SP
+          CEP: 04543-011 <br>
+          <!-- Contato: +55 11 3333-3333 -->
+        </p>
+
+        <p class="footer-alvara">
+          Alvará de Funcionamento 2018/04088-00, validade 16/03/2019.
+          AVCB nº 223326, validade 02/02/2019. Capacidade Máxima: 2085 pessoas
+        </p>
+
+        <p class="footer-policy">
+          <a href="/MarcoCivil-Privacidade-TeatroSantander.pdf" target="_blank">Política de Privacidade</a> | <a href="/MarcoCivil-Cookies-TeatroSantander.pdf" target="_blank">Política de uso de cookies</a>
+        </p>
+      </div>
+    </div>
+    <div class="row footer-partners">
+      <div class="col-sm-7 col-xs-12">
+
+        <div class="row">
+          <div class="col-sm-3 col-xs-12 logo-col">
+            <%= image_tag 'logo-footer.png', class: 'img-responsive logo-santander-teatro', alt: 'Teatro Santander' %>
+          </div>
+
+          <div class="col-sm-7 col-xs-12 realizations-col">
+            <span class="footer-partners-text">Realização:</span>
+            <%= image_tag 'logo-santander.png', class: 'img-responsive', alt: 'Santander' %>
+            <%= image_tag 'logo-iguatemi.png', class: 'img-responsive', alt: 'Shopping Iguatemi' %>
+          </div>
+          <div class="col-xs-12 complexo-col">
+            <p>Complexo WT JK</p>
+          </div>
+        </div>
+
+      </div>
+      <div class="col-sm-4 col-xs-12 logo-planb-col pull-right">
+        <a href="http://planb.com.br" target="_blank"><%= image_tag 'planb.png', alt: 'Plan B Comunicação' %></a>
+      </div>
+    </div>
+  </div>
+</footer>
+<script type="text/javascript">
+  /* <![CDATA[ */
+  var google_conversion_id = 923811737;
+  var google_custom_params = window.google_tag_params;
+  var google_remarketing_only = true;
+  /* ]]> */
+</script>
+<script type="text/javascript" src="//www.googleadservices.com/pagead/conversion.js">
+</script>
+<noscript>
+  <div style="display:inline;">
+  <img height="1" width="1" style="border-style:none;" alt="" src="//googleads.g.doubleclick.net/pagead/viewthroughconversion/923811737/?value=1&amp;guid=ON&amp;script=0"/>
+  </div>
+</noscript>
+<!-- Global site tag (gtag.js) - Google AdWords -->
+<script>
+function gtag_report_conversion(url) {
+var callback = function () {
+if (typeof(url) != 'undefined') {
+window.location = url;
+}
+};
+gtag('event', 'conversion', {
+'send_to': 'AW-820609263/o8PQCL-JgH4Q74GmhwM',
+'event_callback': callback
+});
+return false;
+}
+</script>
+</body>
+</html>

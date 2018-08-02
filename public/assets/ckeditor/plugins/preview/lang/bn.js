@@ -1,0 +1,1 @@
+CKEDITOR.plugins.setLang("preview","bn",{preview:"\u09aa\u09cd\u09b0\u09bf\u09ad\u09bf\u0989"});

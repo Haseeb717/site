@@ -1,0 +1,1 @@
+CKEDITOR.plugins.setLang("newpage","bn",{toolbar:"\u09a8\u09a4\u09c1\u09a8 \u09aa\u09c7\u099c"});

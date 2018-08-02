@@ -1,0 +1,156 @@
+
+<section class="empresarial-holder">
+  <div class="container">
+    <div class="row title-row">
+      <div class="col-md-5">
+        <h1>COMERCIAL</h1>
+      </div>
+      <div class="col-md-6 col-sm-11">
+        <a href="http://033rooftop.com.br/" target="_blank" onclick="gtag('event', 'Banner_Rooftop', { 'send_to': 'UA-74766673-1', 'event_category': 'clique', 'event_label': 'banner' });">
+          <%= image_tag 'botton_rooftop.png', class: 'img-responsive', alt: 'Conheça também o nosso novo espaço, 033 Rooftop, ideal para realizar o seu evento. Conheça.' %>
+        </a>
+        <div class="rooftop">
+          <div class="col-sm-8 no-padding">
+            <p>As cortinas do Teatro Santander se abrem para propostas de eventos e parcerias.</p>
+          </div>
+          <div class="col-sm-4 no-padding">
+            <a class="btn" href="/assets/pdf/SALES_KIT_TEATRO-3d02786e5b50046361e4e1103f0805117f6c4e204834de8ad0a41f91593c98cb.pdf" target="_blank" onclick="gtag('event', 'Saiba_Mais', { 'send_to': 'UA-74766673-1', 'event_category': 'clique', 'event_label': 'botao' });">Saiba Mais</a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="row form-row"> 
+      <div class="col-sm-5 col-xs-12">
+        <div class="col-xs-12 col-text no-padding">
+          <p>Selecione a proposta desejada:</p>
+        </div>
+        <label class="radio-inline">
+          <input type="radio" name="comercial" value="evento" checked="checked">Evento
+        </label>
+        <label class="radio-inline">
+          <input type="radio" name="comercial" value="parceria">Parceria
+        </label>
+        <div id="form_business" class="active">
+          <%= render 'form_business' %>
+        </div>
+        <div id="form_partnership">
+          <%= render 'form_partnership' %>
+        </div>
+      </div>
+      <div class="col-sm-6 col-xs-12">
+        <div id="slider-secundario-box" class="carousel slide">
+
+          <!-- Wrapper for slides -->
+          <div class="carousel-inner" role="listbox">
+
+            <div class="item active">
+              <%= image_tag 'empresarial/musical-1.jpg', class: 'img-responsive center-block', alt: 'Evento Musicais e Dramaturgia Teatro Santander' %>
+
+              <div class="carousel-caption">
+                <p class="evento-tipo">Musicais e Dramaturgia</p>
+                <p class="evento-lotacao">1100 pessoas sentadas</p>
+              </div>
+            </div>
+
+            <div class="item">
+              <%= image_tag 'empresarial/desfile-1.jpg', class: 'img-responsive center-block', alt: 'Evento Desfiles Teatro Santander' %>
+
+              <div class="carousel-caption">
+                <p class="evento-tipo">Desfiles</p>
+                <p class="evento-lotacao">800 pessoas sentadas</p>
+              </div>
+            </div>
+
+            <div class="item">
+              <%= image_tag 'empresarial/evento-1.jpg', class: 'img-responsive center-block', alt: 'Eventos Teatro Santander' %>
+
+              <div class="carousel-caption">
+                <p class="evento-tipo">Eventos</p>
+                <p class="evento-lotacao">400 pessoas sentadas</p>
+              </div>
+            </div>
+
+            <div class="item">
+              <%= image_tag 'empresarial/show-1.jpg', class: 'img-responsive center-block', alt: 'Evento Shows Teatro Santander' %>
+
+              <div class="carousel-caption">
+                <p class="evento-tipo">Shows</p>
+                <p class="evento-lotacao">1.800 pessoas no total (em pÃ© e sentadas)</p>
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+        <div class="galeria">
+          <h2>Galeria</h2>
+          <div id="box-galeria" class="box-galeria">
+            <a class="fancybox" rel="group" href="<%= asset_path('empresarial/galeria/1.jpg') %>">
+              <%= image_tag 'empresarial/galeria/1.jpg', class: 'img-responsive center-block', alt: 'Evento Shows Teatro Santander' %>
+            </a>
+            <a class="fancybox" rel="group" href="<%= asset_path('empresarial/galeria/2.jpg') %>">
+              <%= image_tag 'empresarial/galeria/2.jpg', class: 'img-responsive center-block', alt: 'Evento Shows Teatro Santander' %>
+            </a>
+            <a class="fancybox" rel="group" href="<%= asset_path('empresarial/galeria/3.jpg') %>">
+              <%= image_tag 'empresarial/galeria/3.jpg', class: 'img-responsive center-block', alt: 'Evento Shows Teatro Santander' %>
+            </a>
+            <a class="fancybox" rel="group" href="<%= asset_path('empresarial/galeria/4.jpg') %>">
+              <%= image_tag 'empresarial/galeria/4.jpg', class: 'img-responsive center-block', alt: 'Evento Shows Teatro Santander' %>
+            </a>
+            <a class="fancybox" rel="group" href="<%= asset_path('empresarial/galeria/5.jpg') %>">
+              <%= image_tag 'empresarial/galeria/5.jpg', class: 'img-responsive center-block', alt: 'Evento Shows Teatro Santander' %>
+            </a>
+            <a class="fancybox" rel="group" href="<%= asset_path('empresarial/galeria/6.jpg') %>">
+              <%= image_tag 'empresarial/galeria/6.jpg', class: 'img-responsive center-block', alt: 'Evento Shows Teatro Santander' %>
+            </a>
+            <a class="fancybox" rel="group" href="<%= asset_path('empresarial/galeria/7.jpg') %>">
+              <%= image_tag 'empresarial/galeria/7.jpg', class: 'img-responsive center-block', alt: 'Evento Shows Teatro Santander' %>
+            </a>
+            <a class="fancybox" rel="group" href="<%= asset_path('empresarial/galeria/8.jpg') %>">
+              <%= image_tag 'empresarial/galeria/8.jpg', class: 'img-responsive center-block', alt: 'Evento Shows Teatro Santander' %>
+            </a>
+            <a class="fancybox" rel="group" href="<%= asset_path('empresarial/galeria/9.jpg') %>">
+              <%= image_tag 'empresarial/galeria/9.jpg', class: 'img-responsive center-block', alt: 'Evento Shows Teatro Santander' %>
+            </a>
+            <a class="fancybox" rel="group" href="<%= asset_path('empresarial/galeria/10.jpg') %>">
+              <%= image_tag 'empresarial/galeria/10.jpg', class: 'img-responsive center-block', alt: 'Evento Shows Teatro Santander' %>
+            </a>
+            <a class="fancybox" rel="group" href="<%= asset_path('empresarial/galeria/11.jpg') %>">
+              <%= image_tag 'empresarial/galeria/11.jpg', class: 'img-responsive center-block', alt: 'Evento Shows Teatro Santander' %>
+            </a>
+            <a class="fancybox" rel="group" href="<%= asset_path('empresarial/galeria/12.jpg') %>">
+              <%= image_tag 'empresarial/galeria/12.jpg', class: 'img-responsive center-block', alt: 'Evento Shows Teatro Santander' %>
+            </a>
+            <a class="fancybox" rel="group" href="<%= asset_path('empresarial/galeria/13.jpg') %>">
+              <%= image_tag 'empresarial/galeria/13.jpg', class: 'img-responsive center-block', alt: 'Evento Shows Teatro Santander' %>
+            </a>
+            <a class="fancybox" rel="group" href="<%= asset_path('empresarial/galeria/14.jpg') %>">
+              <%= image_tag 'empresarial/galeria/14.jpg', class: 'img-responsive center-block', alt: 'Evento Shows Teatro Santander' %>
+            </a>
+            <a class="fancybox" rel="group" href="<%= asset_path('empresarial/galeria/15.jpg') %>">
+              <%= image_tag 'empresarial/galeria/15.jpg', class: 'img-responsive center-block', alt: 'Evento Shows Teatro Santander' %>
+            </a>
+            <a class="fancybox" rel="group" href="<%= asset_path('empresarial/galeria/16.jpg') %>">
+              <%= image_tag 'empresarial/galeria/16.jpg', class: 'img-responsive center-block', alt: 'Evento Shows Teatro Santander' %>
+            </a>
+            <a class="fancybox" rel="group" href="<%= asset_path('empresarial/galeria/17.jpg') %>">
+              <%= image_tag 'empresarial/galeria/17.jpg', class: 'img-responsive center-block', alt: 'Evento Shows Teatro Santander' %>
+            </a>
+            <a class="fancybox" rel="group" href="<%= asset_path('empresarial/galeria/18.jpg') %>">
+              <%= image_tag 'empresarial/galeria/18.jpg', class: 'img-responsive center-block', alt: 'Evento Shows Teatro Santander' %>
+            </a>
+            <a class="fancybox" rel="group" href="<%= asset_path('empresarial/galeria/19.jpg') %>">
+              <%= image_tag 'empresarial/galeria/19.jpg', class: 'img-responsive center-block', alt: 'Evento Shows Teatro Santander' %>
+            </a>
+          </div>
+        </div>
+        <div class="col-md-12 row">
+          <a href="<%= previous_events_path %>" class="btn-link">Confira também o que já aconteceu
+            <span><img class="img-responsive" alt="JÃ¡ aconteceu" src="<%= asset_path('red-seta.png') %>"></span>
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

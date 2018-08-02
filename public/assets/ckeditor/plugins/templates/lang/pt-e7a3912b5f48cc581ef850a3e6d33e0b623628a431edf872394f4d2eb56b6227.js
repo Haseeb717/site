@@ -1,0 +1,1 @@
+CKEDITOR.plugins.setLang("templates","pt",{button:"Modelos",emptyListMsg:"(Sem modelos definidos)",insertOption:"Substituir conte\xfados atuais",options:"Op\xe7\xf5es do modelo",selectPromptMsg:"Por favor, selecione o modelo para abrir no editor",title:"Conte\xfado dos Modelos"});

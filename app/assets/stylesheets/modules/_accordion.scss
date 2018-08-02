@@ -1,0 +1,50 @@
+.accordion-title, .sub-accordion-title {
+  cursor: pointer;
+  font-size: 1em;
+  line-height: 22px;
+  font-weight: 900;
+  padding: 13px 0px;
+  border-bottom: 1px solid rgba(149, 149, 149, 0.17);
+}
+.accordion-content, .sub-accordion-content {
+    display: none;
+
+    -webkit-animation-duration: 1s;
+            animation-duration: 1s;
+    -webkit-animation-fill-mode: both;
+            animation-fill-mode: both;
+    p {
+      margin: 19px 0;
+    }
+}
+.accordion-item.active .accordion-content,
+.sub-accordion-item.active .sub-accordion-content {
+    display: block;
+}
+
+/* Animations */
+/* Fade In */
+@-webkit-keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}
+
+.fadeIn {
+  -webkit-animation-name: fadeIn;
+  animation-name: fadeIn;
+}

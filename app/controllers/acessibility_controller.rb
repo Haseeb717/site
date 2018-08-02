@@ -1,0 +1,2 @@
+class AcessibilityController < ApplicationController
+end

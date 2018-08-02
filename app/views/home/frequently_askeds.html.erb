@@ -1,0 +1,41 @@
+<section class="content faq-holder">
+  <div class="container">
+    <div class="row title-row">
+      <div class="col-sm-3 col-md-2 col-xs-9">
+        <h1>FAQ</h1>
+      </div>
+      <div class="col-sm-4 col-xs-12 col-text no-padding">
+        <p>Perguntas Frequentes</p>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-sm-12 col-xs-12">
+        <div class="tabs tabs-style-linebox" id="tabs">
+          <nav>
+            <ul>
+              <% @frequently_askeds_by_category.each do |item| %>
+                <li><a class="faq-tab-link" href="#tabs" data-target="<%= item.to_slug %>"><span><%= item.name %></span></a></li>
+              <% end %>
+            </ul>
+          </nav>
+        </div><!-- /tabs -->
+
+        <% @frequently_askeds_by_category.each_with_index do |item, index| %>
+        <div class="faq-box <%= 'active' if index == 0 %>"  id="<%= item.to_slug %>" >
+          <div class="accordion">
+              <% item.frequently_askeds.each do |frequently_asked| %>
+              <div class="accordion-item">
+                  <div class="accordion-title"><%= frequently_asked.question %></div>
+                  <div class="accordion-content fadeIn">
+                      <%= frequently_asked.answer.html_safe %>
+                  </div>
+              </div>
+              <% end %>
+          </div>
+        </div>
+        <% end %>
+      </div>
+    </div>
+  </div>
+</section>

@@ -1,0 +1,248 @@
+
+.event-holder {
+  margin-top: 120px;
+
+  .title-row {
+    margin-bottom: 15px;
+  }
+
+  h1 {
+    color: $red;
+    font-weight: $black;
+    letter-spacing: 9px;
+    line-height: 1;
+    display: block;
+    padding: 0px 0px 19px 0px;
+    margin: 0;
+    border-right: 2px solid $red;
+    width: 97%;
+  }
+
+  .event-image-col {
+    overflow: hidden;
+
+    .destaque-holder {
+      position: relative;
+
+      .destaque-title-holder {
+        color: #fff;
+        position: absolute;
+        z-index: 999;
+        width: 50%;
+        right: 120px;
+        bottom: 115px;
+
+        h1 {
+          font-size: 5em;
+          font-style: italic;
+          font-weight: $bold;
+          text-transform: initial;
+          text-shadow: 0px 5px 17px rgba(0, 0, 0, 0.61);
+          color: #fff;
+          border: none;
+          margin: 0;
+          letter-spacing: initial;
+          padding: 0;
+        }
+
+        h2 {
+          font-size: 1.5em;
+          text-shadow: 0px 5px 17px rgba(0, 0, 0, 0.61);
+          letter-spacing: 1px;
+          font-weight: 700;
+          margin-top: 10px;
+        }
+
+      }
+
+      .event-triangle {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+      }
+
+      .img-responsive{
+        width: 100%;
+        z-index: 99;
+      }
+
+      .destaque-shadow{
+        position: absolute;
+        bottom: 0;
+        height: 100%;
+        width: 100%;
+        -webkit-box-shadow: inset 0 -105px 232px 0 #000000;
+        -ms-box-shadow: inset 0 -105px 232px 0 #000000;
+        box-shadow: inset 0 -105px 232px 0 #000000;
+      }
+    }
+
+    .map-holder {
+      background-color: #fafafa;
+      background-color: #fafafa;
+      width: 80%;
+      padding: 40px;
+    }
+
+  }
+
+  .event-about-col {
+
+    h3 {
+      text-transform: uppercase;
+      margin: 0 0 15px;
+      padding-top: 30px;
+    }
+    p {
+      margin-bottom: 10px;
+    }
+
+    .event-text-box,
+    .event-ticket-box,
+    .event-value-box,
+    .event-bilheteria-box,
+    .event-share,
+    .event-info-box {
+      padding: 0 50px;
+    }
+
+    .event-share{
+      margin: 20px 0;
+    }
+    .event-ticket-box {
+      background-color: #fafafa;
+
+      .classificacao-title {
+        font-weight: $black;
+      }
+
+      .media {
+        margin-bottom: 15px;
+      }
+
+      .btn {
+        box-shadow: 0px 8px 20px 0px rgb( 213, 214, 217 );
+        margin-bottom: 20px;
+      }
+    }
+
+    .event-value-box {
+      background-color: #fafafa;
+
+      table {
+        margin: 0;
+      }
+
+      tr {
+        th {
+          border: none;
+          text-transform: uppercase;
+          color: #cfcfcf;
+          font-weight: $black;
+        }
+
+        td {
+          border: none;
+          border-bottom: 2px solid #cacaca;
+          padding: 10px 8px 8px;
+
+          *{
+            font-size: 16px !important;
+            margin: 0 !important;
+          }
+
+          &.setor-td {
+            font-weight: $black;
+          }
+        }
+      }
+      p{
+        margin: 0;
+      }
+    }
+
+    .event-bilheteria-box {
+      background-color: #fafafa;
+
+      .horario-title {
+        font-weight: $black;
+        margin-bottom: 0;
+      }
+
+      .beneficios-title {
+        padding-top: 67px;
+        font-weight: $black;
+      }
+    }
+
+    .event-info-box {
+      background-color: #fafafa;
+      padding-bottom: 30px;
+      p {
+        font-style: italic;
+        line-height: 28px
+      }
+    }
+    .text-peca-cartao{
+      margin-top: 60px;
+      position: relative;
+      &:before{
+        content: '';
+        position: absolute;
+        width: 80%;
+        margin-left: 10%;
+        border-top: 1px solid #ed2328;
+        margin-bottom: 30px;
+        top: -30px;
+      }
+    }
+  }
+}
+
+@media (max-width: $screen-xs-max) {
+  .event-holder {
+    margin-top: 95px;
+
+    h1 {
+      letter-spacing: initial;
+      padding: 0;
+      width: 100%;
+      font-size: 1.625em;
+    }
+    .event-image-col {
+      .destaque-holder {
+
+        .destaque-title-holder {
+          width: 100%;
+          right: 0;
+          top: 102px;
+          padding: 0 20px;
+
+          h1 {
+            font-size: 4em;
+          }
+        }
+      }
+    }
+
+    .event-about-col {
+
+      margin-top: 30px;
+
+      .event-text-box,
+      .event-ticket-box,
+      .event-value-box,
+      .event-bilheteria-box,
+      .event-info-box {
+        padding: 0 20px;
+      }
+
+      .event-bilheteria-box {
+        .beneficios-title {
+          padding-top: 30px;
+        }
+      }
+    }
+  }
+
+}

@@ -1,0 +1,70 @@
+<section class="content imprensa-holder">
+  <div class="container">
+    <div class="row title-row">
+      <div class="col-sm-6 col-lg-4 col-xs-12">
+        <h1>Imprensa</h1>
+      </div>
+      <div class="col-sm-4 col-xs-12 col-text no-padding">
+        <p>Acesse releases e informações sobre todos os eventos que já estiveram no palco do Teatro Santander. </p>
+      </div>
+    </div>
+
+    <div class="row">
+
+      <div class="col-sm-7 col-xs-12">
+        <%
+        if @realeases.present?
+          @realeases.each do |item|
+        %>
+          <a href="<%= item.file.url %>" download>
+            <div class="release-holder">
+              <p class="release-title"><%= item.title %></p>
+              <hr>
+              <p class="release-date"><%= item.subtitle %></p>
+              <p class="release-text"><%= item.description %></p>
+            </div>
+          </a>
+        <%
+          end
+        else
+        %>
+          <p>
+            Nenhuma release disponível
+          </p>
+        <%
+        end
+        %>
+      </div>
+
+      <div class="col-sm-4 col-xs-12 side-col">
+        <div class="teatro-release-holder">
+          <h3>Baixe o Press kit do<br> Teatro Santander</h3>
+          <a href="files/press-kit-teatro-santander.zip" target="_blank" class="btn btn-red" download>DOWNLOAD</a>
+        </div>
+
+        <!-- <div class="infos-holder">
+          <div class="info-item">
+            <h3 class="info-title">Telefones úteis</h3>
+            <h4 class="info-subtitle">SAC - Teatro Santander</h4>
+            <p class="info-text">+55 011  9999-9999</p>
+          </div>
+        </div> -->
+
+        <div class="infos-holder">
+          <div class="info-item">
+            <h3 class="info-title">E-mails úteis</h3>
+            <h4 class="info-subtitle">Sac</h4>
+            <p class="info-text">sac@teatrosantander.com.br</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<%= will_paginate @realeases,
+        :class=> "pagination center-block",
+        :next_label => "<span class='icon-next'></span>",
+        :previous_label => "<span class='icon-prev'></span>",
+        :inner_window => 1,
+        :outer_window => 0 %>
+</div>

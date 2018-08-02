@@ -1,0 +1,12 @@
+Ruby: 2.3.0
+
+
+Conectar banco de dados PostgreSQL
+
+Local::Comando: psql -U dba -h 192.168.0.12 -d teatro_santander
+
+Senha: w3bMast3r
+
+
+Iniciar busca
+rake sunspot:solr:start

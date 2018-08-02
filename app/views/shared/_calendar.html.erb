@@ -1,0 +1,33 @@
+<div class="row title-row">
+  <div class="col-sm-8 col-md-6 col-lg-5 col-xs-12">
+    <h1>Programação</h1>
+  </div>
+  <div class="col-sm-12 col-md-6 col-lg-7 col-xs-12 hidden-xs calendar-col">
+    <!-- Swiper -->
+    <div class="swiper-container swiper-calendar">
+      <div class="swiper-wrapper">
+
+        <% @schedules.each do |item| %>
+        <div class="swiper-slide calendar-slide">
+          <div class="date-box">
+
+            <p><%= l item.date, format: '%A' %></p>
+            <p><%= l item.date, format: '%d/%m' %></p>
+          </div>
+          <div class="calendar-day-events">
+            <ul>
+              <% item.sessions.each do |y| %>
+                <li><a href="<%= events_show_path item.event %>"><span><%= l y.time, format: '%Hh:%Mm' %></span> - <%= item.event.title %> </a></li>
+              <% end %>
+            </ul>
+          </div>
+        </div>
+        <% end %>
+      </div>
+      <!-- Add Arrows -->
+
+    </div>
+    <div class="swiper-button-next"></div>
+    <div class="swiper-button-prev"></div>
+  </div>
+</div>

@@ -1,0 +1,790 @@
+
+
+.about-header {
+  background-image: asset-url('about/bg-about.jpg');
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  height: 100vh;
+  background-size: cover;
+  margin-bottom: 70px;
+
+  .about-header-col {
+    margin-top: 40vh;
+    h1 {
+      font-size: 80px;
+      color: #fff;
+      font-weight: $bold;
+      letter-spacing: 15px;
+      display: inline-block;
+      span {
+        font-size: 48px;
+        font-weight: $light;
+        display: block;
+        margin-bottom: 30px;
+        position: relative;
+      }
+      &:after{
+        content: '';
+        position: absolute;
+        background: url(/assets/new-version/after-title.png);
+        border-radius: 2px;
+        bottom: -15px;
+        right: 0;
+        width: 230px;
+        height: 7px;
+      }
+
+    }
+
+    p {
+      color: #fff;
+      font-size: 23px;
+      font-weight: $regular;
+      padding-right: 101px;
+    }
+  }
+}
+
+.about-caracteristicas {
+  padding: 80px 0;
+  &.dark{
+    background-color: #000;
+    .about-carac-text{
+      h2{
+        color: #FFF;
+        &:before{
+          color: #000;
+        }
+      }
+      p{
+        color: #FFF;
+      }
+    }
+  }
+  .about-carac-text {
+    margin-bottom: 70px;
+    top: 66px;
+
+    h2 {
+      font-size: 46px;
+      font-weight: $bold;
+      &:before{
+        content: attr(data-line);
+        left: 17px;
+        margin: 0;
+        font-weight: 400;
+        color: #fff;
+        top: -30px;
+        padding: 0;
+        font-size: 25px;
+        border-bottom: 5px solid #e00303;
+        position: absolute;
+        text-indent: 0;
+      }
+      span{
+        font-weight: 300;
+        display: block;
+        font-size: 42px;
+      }
+
+      &.a-right {
+        text-align: right;
+      }
+    }
+
+    p {
+      &.a-right {
+        text-align: right;
+      }
+
+      &:after {
+        color: transparent;
+        border-bottom: 2px solid $red;
+        height: 4px;
+        left: 15px;
+        bottom: 0;
+      }
+
+      &.bottom-line-right {
+        &:after {
+          right: 15px;
+          left: initial;
+        }
+      }
+    }
+
+    &.pioneirismo, &.detalhes {
+      top: 150px;
+
+      h2{
+        &:before{
+          content: '';
+        }
+        &:after{
+          content: attr(data-line);
+          right: 17px;
+          margin: 0;
+          font-weight: 400;
+          color: #fff;
+          top: 0;
+          padding: 0;
+          font-size: 25px;
+          border-bottom: 5px solid #e00303;
+          position: absolute;
+          text-indent: 0;
+          width: 40px;
+        }
+      }
+    }
+  }
+
+  .about-carac-img {
+    position: relative;
+    margin: 40px 0;
+    // &:after{
+    //   content: '';
+    //   position: absolute;
+    //   left: -40px;
+    //   top: -40px;
+    //   width: 100%;
+    //   height: 100px;
+    //   border: 1px solid #e00303;
+    // }
+  }
+  .vertical-line{
+    margin: 0 0 0 250px;  
+  }
+}
+
+.swiper-galeria-teatro{
+  width: 100%;
+  height: 630px;
+  margin: 0 auto;
+  position: relative;
+  overflow: hidden;
+  z-index: 1;
+  padding-bottom: 40px;
+  // .swiper-slide-prev, .swiper-slide-next{
+  //   width: 320px !important;
+  //   height: 220px;
+  //   background-size: cover;
+  //   transition: all linear .3s;
+  //   &.swiper-slide-active{
+  //     width: 710px !important;
+  //     height: 535px;
+  //   }
+  // }
+  &.swiper-container-horizontal > .swiper-pagination-bullets{
+    bottom: 0px;
+    left: 0;
+    width: 100%;
+  }
+  &.swiper-container-horizontal > .swiper-pagination-bullets .swiper-pagination-bullet {
+    margin: 0 5px;
+    background-color: transparent;
+    border: 1px solid #a2a2a2;
+    opacity: 1;
+    &.swiper-pagination-bullet-active{
+      background-color: #e00303;
+      border: 1px solid #e00303;
+    }
+  }
+}
+
+.slider-about {
+  padding: 80px 0;
+  h2 {
+    font-size: 46px;
+    font-weight: $bold;
+    margin-bottom: 80px;
+    &:before{
+      content: attr(data-line);
+      left: 17px;
+      margin: 0;
+      font-weight: 400;
+      color: #fff;
+      top: -30px;
+      padding: 0;
+      font-size: 25px;
+      border-bottom: 5px solid #e00303;
+      position: absolute;
+      text-indent: 0;
+    }
+    span{
+      font-weight: 300;
+      font-size: 42px;
+    }
+  }
+  .slider-about-content {
+    width: 40%;
+    margin: 0 auto;
+    top: 280px;
+    position: relative;
+
+    p {
+      color: #fff;
+
+      &:before {
+        left: -68px;
+        color: transparent;
+        border-bottom: 4px solid #fff;
+      }
+    }
+  }
+
+  .swiper-container-big .swiper-slide img.img-rectangle{
+    top: 0;
+  }
+}
+
+.about-local {
+
+  .col-localizacao {
+    padding: 0 0 0 53px;
+
+    h1 {
+      font-size: 3em;
+      font-weight: $black;
+
+      &:before {
+        left: -50px;
+        color: transparent;
+        top: -5px;
+        font-size: 45px;
+        border-bottom: 1px solid #000;
+      }
+    }
+
+    p {
+      margin-bottom: 25px;
+
+      &.local-endereco {
+        &:before {
+          left: -2px;
+          color: transparent;
+          font-size: 34px;
+          border-bottom: 4px solid $red;
+          height: 10px;
+        }
+      }
+    }
+
+    h4 {
+      font-size: $font-18;
+      font-weight: $black;
+      margin: 0;
+    }
+
+    .local-horario-title, .local-pagamento-title {
+      font-weight: $bold;
+      margin: 0 0 5px;
+    }
+  }
+
+  #map{
+    width:95%;
+    height: 750px;
+    z-index: 9;
+  }
+
+  .btn-como-chegar {
+    color: #000;
+    font-weight: $black;
+    font-size: $font-14;
+    display: inline-block;
+    text-decoration: none;
+    transition: all .5s ease-in-out;
+    margin-top: 15px;
+    position: relative;
+    text-transform: uppercase;
+
+    span {
+      margin-left: 6px;
+      display: inline-block;
+    }
+
+    &:hover {
+      span {
+        margin-left: 10px;
+      }
+    }
+
+    &:before {
+      content: attr(data-line-after);
+      position: absolute;
+      bottom: -2px;
+      margin: 0;
+      font-weight: 400;
+      color: transparent;
+      padding: 0;
+      font-size: 29px;
+      border-bottom: 2px solid $red;
+      position: absolute;
+      height: 14px;
+      text-indent: 0;
+    }
+  }
+}
+.about-patrocinadores, .about-empreendedores {
+  position: relative;
+  margin-bottom: 70px;
+  h2 {
+    font-size: 3em;
+    font-weight: $black;
+    margin: 0;
+
+    &:before{
+      content: attr(data-line);
+      left: 17px;
+      margin: 0;
+      font-weight: 400;
+      color: #fff;
+      top: -50px;
+      padding: 0;
+      font-size: 25px;
+      border-bottom: 5px solid #e00303;
+      position: absolute;
+      text-indent: 0;
+    }
+  }
+
+  h3 {
+    font-weight: $light;
+    font-size: 2.500em;
+    text-transform: uppercase;
+    margin: 9px 0;
+  }
+
+  a {
+    text-decoration: none;
+  }
+  .about-patrocinadores-box, .about-empreendedores-box {
+    position: relative;
+
+    .img-patrocinador, .img-empreendedor {
+      width: 100%;
+      z-index: 2;
+      position: relative;
+      -webkit-filter: grayscale(1) brightness(1.5);
+      filter: grayscale(1) brightness(1.5);
+      transition: all .4s ease-in-out;
+      &:hover{
+        -webkit-filter: grayscale(0) brightness(1);
+        filter: grayscale(0) brightness(1);
+      }
+    }
+
+    .logo-box {
+      width: 260px;
+      height: 50px;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      margin-top: -25px;
+      margin-left: -130px;
+
+    }
+
+  }
+
+  .patrocinador-caption{
+    p {
+      font-weight: $bold;
+      text-align: center;
+      color: #FFF;
+      text-transform: uppercase;
+      margin-top: 40px;
+    }
+  }
+  .empreendedor-caption{
+    p {
+      font-weight: $bold;
+      text-align: center;
+      color: #333333;
+      text-transform: uppercase;
+      margin-top: 40px;
+    }
+  }
+
+  .about-patrocinador-detail, .about-empreendedor-detail {
+    position: fixed;
+      top: 50%;
+      display: none;
+      z-index: 99999999;
+    .detail-col {
+      background: asset-url('about/bg-chairs.jpg') no-repeat center center;
+      background-size: cover;
+      top: 50%;
+      position: fixed;
+      z-index: 999;
+      width: 50%;
+      left: 50%;
+      -ms-transform: translateX(-50%);
+      -webkit-transform: translateX(-50%);
+      transform: translateX(-50%);
+      margin-top: -200px;
+
+      .patrocinador-box-open, .empreendedor-box-open {
+        padding: 30px 7em;
+
+        img {
+          margin-bottom: 30px;
+        }
+        p {
+          color: #fff;
+          font-weight: $light;
+          text-align: center;
+        }
+
+        .btn {
+          font-size: $font-14;
+          margin: 0 auto;
+          width: 195px;
+        }
+
+        .link-fechar-p, .link-fechar-e {
+          position: absolute;
+          right: 10px;
+          top: 10px;
+          width: 22px;
+          height: 21px;
+          background: asset-url('about/bg-fechar.png') no-repeat center center;
+        }
+      }
+
+    }
+
+    &.active {
+      display: block;
+    }
+  }
+
+  .container {
+    position: relative;
+  }
+}
+
+.about-patrocinadores{
+  .about-patrocinadores-box{
+    display: block;
+    position: relative;
+    z-index: 99;
+    position: relative;
+    &:before {
+      content: '';
+      position: absolute;
+      border: 2px solid #e00303;
+      width: 80%;
+      height: 113%;
+      left: 10%;
+      top: -30px;
+      background: asset-url('new-version/before-lines-red-black-2px.jpg') no-repeat;
+      background-position: center 100%;
+      border-bottom-style: none;
+      opacity: 0;
+      transition: all .3s ease-in-out;
+    }
+    &:after {
+      content: '';
+      position: absolute;
+      border: 2px solid #e00303;
+      width: 80%;
+      height: 113%;
+      left: 10%;
+      top: -30px;
+      background: asset-url('new-version/after-lines-white-black-2px.jpg') no-repeat;
+      background-position: center 100%;
+      border-bottom-style: none;
+      z-index: -1;      
+    }
+    &:hover{
+      &:before{
+        opacity: 1;
+      }
+    }    
+  }
+}
+.about-empreendedores{
+  .about-empreendedores-box{
+    &:before {
+      content: '';
+      position: absolute;
+      border: 2px solid #e00303;
+      width: 80%;
+      height: 113%;
+      left: 10%;
+      top: -30px;
+      background: asset-url('new-version/before-lines-red-white-2px.jpg') no-repeat;
+      background-position: center 100%;
+      border-bottom-style: none;
+      opacity: 0;
+      transition: all .3s ease-in-out;
+    }
+    &:after {
+      content: '';
+      position: absolute;
+      border: 2px solid #e00303;
+      width: 80%;
+      height: 113%;
+      left: 10%;
+      top: -30px;
+      background: asset-url('new-version/after-lines-gray-white-2px.jpg') no-repeat;
+      background-position: center 100%;
+      border-bottom-style: none;
+      z-index: -1;      
+    }
+    &:hover{
+      &:before{
+        opacity: 1;
+      }
+    }
+  }
+}
+
+
+.about-patrocinadores{
+  background-color: #000;
+  padding: 160px 0 80px;
+  margin-top: -80px;
+  h2, h3,p{
+    color: #FFF;
+  }
+  h2{
+    &:before{
+      color: #000;
+    }
+  }
+}
+
+.letra {
+  position: absolute;
+  top: -280px;
+
+  &.letra-p-right {
+    right: 0;
+  }
+
+  &.letra-a-right {
+    right: 0;
+  }
+}
+
+@media (max-width: $screen-sm-max) {
+  .about-header {
+    margin-bottom: 35px;
+
+    .about-header-col {
+      margin-top: 123px;
+      h1 {
+        font-size: 2em;
+        letter-spacing: 7px;
+        line-height: 30px;
+        &:after{
+          content: initial;
+        }
+      }
+
+      p {
+        font-size: 16px;
+        padding-right: 0;
+        word-break: break-word;
+      }
+    }
+  }
+
+  .about-caracteristicas {
+    .about-carac-text {
+      margin-bottom: 35px;
+      top: 0;
+
+      h1 {
+        font-size: 2em;
+        word-break: break-word;
+
+        &:before, &:after {
+          display: none;
+        }
+      }
+
+      p {
+        &:before {
+          display: none;
+        }
+      }
+
+      &.pioneirismo {
+        top: 0;
+      }
+    }
+
+    .about-carac-img {
+      margin-bottom: 35px;
+    }
+    .about-carac-text.pioneirismo, .about-carac-text.detalhes{
+      top: 60px;
+    }
+  }
+
+  .slider-about {
+    margin-bottom: 30px;
+
+    .slider-about-content {
+      width: 100%;
+      top: 0;
+      padding: 0 119px;
+
+      h1 {
+        font-size: 2.000em;
+      }
+    }
+    .swiper-container {
+      height: 450px;
+    }
+  }
+
+  .about-local {
+    margin-bottom: 60px;
+
+    .col-localizacao {
+      padding: 0 15px;
+
+      h1 {
+        font-size: 2em;
+
+        &:before {
+          display: none;
+        }
+      }
+
+      p {
+        margin-bottom: 25px;
+
+        &.local-endereco {
+          &:before {
+            display: none;
+          }
+        }
+      }
+    }
+    #map{
+      height: 70vh;
+    }
+  }
+
+  .about-patrocinadores, .about-empreendedores {
+    margin-bottom: 70px;
+    h1 {
+      font-size: 2em;
+      margin: 0 0 5px;
+    }
+
+    h2 {
+      font-size: 1.5em;
+      margin: 15px 0;
+    }
+
+    .about-patrocinador-detail, .about-empreendedor-detail {
+      position: absolute;
+      top: -40px;
+      display: none;
+      z-index: 9;
+
+      .detail-col {
+        background-size: cover;
+        top: 0;
+        bottom: 0;
+        position: fixed;
+        overflow-y: scroll;
+        overflow-x: hidden;
+        height: 100%;
+        z-index: 999;
+        width: 100%;
+        margin-top: 0;
+
+        .patrocinador-box-open, .empreendedor-box-open {
+          padding: 90px 10px 10px;
+
+          img {
+            margin-bottom: 20px;
+          }
+
+          .link-fechar-p, .link-fechar-e {
+            top: 73px;
+          }
+        }
+
+      }
+
+      &.active {
+        display: block;
+      }
+    }
+
+    .container {
+      position: relative;
+    }
+  }
+  .about-patrocinadores .about-patrocinadores-box, .about-patrocinadores .about-empreendedores-box, .about-empreendedores .about-patrocinadores-box, .about-empreendedores .about-empreendedores-box {
+    max-width: 350px;
+    margin: 30px auto;
+  }
+  .slider-about h2{
+    font-size: 36px;
+    span{
+      font-size: 36px;
+    }
+  }
+  .about-caracteristicas .about-carac-text h2{
+    font-size: 36px;
+    span{
+      font-size: 36px;
+    }
+  }
+}
+
+@media (max-width: $screen-sm-max) {
+  .about-patrocinadores .about-patrocinadores-box{
+    &:before{
+      top: -15px;
+    }
+    &:after{
+      top: -15px;
+    }
+  }
+}
+
+@media (max-width: $screen-xs-max) {
+  .slider-about {
+    .slider-about-content {
+      padding: 0 30px;
+    }
+  }
+  .about-header {
+    .about-header-col {
+      h1 {
+        font-size: 18px;
+        span{
+          font-size: 28px;
+        }
+      }
+    }
+  }
+  .about-caracteristicas{
+    .about-carac-img{
+      max-height: 350px;
+      overflow: hidden;
+      img{
+        margin-top: -30%;
+      }
+    }
+    .about-carac-text h2{
+      font-size: 32px;
+      span{
+        font-size: 30px;
+      }
+    }
+  }
+  .about-patrocinadores h3, .about-empreendedores h3{
+    font-size: 30px;
+  }
+}

@@ -1,0 +1,56 @@
+<section class="aconteceu-destaque">
+  <div class="container">
+    <div class="row title-row">
+      <div class="col-sm-8 col-md-6 col-lg-5 col-xs-12">
+        <h1>Aconteceu</h1>
+      </div>
+    </div>
+
+    <div class="row">
+      <% if @events.present? %>
+      <% @events.each do |event| %>
+      <div class="col-sm-6 col-xs-12">
+        <a href="<%= previous_events_show_path event %>" class="event-link">
+          <div class="event-box">
+            <div class="row">
+              <div class="col-sm-6 no-padding">
+                <div class="event-image">
+                  <%= image_tag event.image.url(:mini), class: 'img-responsive img-destaque', alt: 'Destaque 1' %>
+                  <button class="btn btn-dark">Leia mais</button>
+                </div>
+              </div>
+              <div class="col-sm-6 no-padding">
+                <div class="event-about">
+                  <p class="event-pre-title">
+                    <span class="gray"><%= event.genre.name %> /</span> 
+                    <%= get_range_of_previous_event_dates event %> 
+                  </p>
+                  <h4 class="event-title"><%= event.title %></h4>
+                  <p class="event-text"><%=h truncate(event.short_description, :length => 80, :separator => ' ')%> </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </a>
+      </div>
+      <% end %>
+      <% else %>
+      <p>
+        Nenhum evento disponível
+      </p>
+      <% end %>
+
+      <div class="col-sm-12 col-xs-12">
+        <div class="pagination-holder">
+          <%= will_paginate @events,
+          :class=> "pagination center-block",
+          :next_label => "<span class='icon-next'></span>",
+          :previous_label => "<span class='icon-prev'></span>",
+          :inner_window => 1,
+          :outer_window => 0 %>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</section>

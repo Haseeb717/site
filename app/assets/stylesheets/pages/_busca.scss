@@ -1,0 +1,94 @@
+.busca-holder {
+  margin: 120px 0 80px;
+
+  h1 {
+    color: $red;
+    font-weight: $black;
+    letter-spacing: 9px;
+    line-height: 1;
+    display: block;
+    padding: 0px 0px 19px 0px;
+    margin: 0;
+    border-right: 2px solid $red;
+  }
+
+  .title-row {
+    margin-bottom: 30px;
+  }
+
+  .busca-headline {
+    margin-bottom: 25px;
+    p {
+      margin: 0;
+
+      &.busca-tag {
+        font-weight: $black;
+        display: inline-block;
+        margin-right: 5px;
+      }
+
+      &.busca-total {
+        font-style: italic;
+        span {
+          color: $red;
+          font-weight: $black;
+          font-style: normal;
+        }
+      }
+    }
+
+    hr {
+      border: none;
+      height: 2px;
+      background-color: $red;
+      margin: 3px 0 10px;
+      width: 72px;
+    }
+  }
+
+  .busca-resultado {
+    .busca-resultado-holder {
+      padding: 20px 15px 15px;
+      margin-bottom: 28px;
+      background-color: #fafafa;
+
+      .busca-resultado-infos {
+        p {
+          margin: 0;
+          text-decoration: underline;
+
+          &.resultado-head {
+            color: $red;
+            font-weight: $bold;
+            margin-bottom: 12px;
+          }
+
+          &.resultado-title {
+            font-size: $font-14;
+            font-weight: $bold;
+            color: $color-font;
+          }
+
+          &.resultado-text {
+            color: $color-font-light;
+          }
+        }
+
+        .highlight-busca {
+          background-color: $red;
+          padding: 2px;
+          color: #fff;
+          text-decoration: underline;
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: $screen-xs-max) {
+  .busca-holder {
+    h1 {
+      font-size: 1.625em;
+    }
+  }
+}

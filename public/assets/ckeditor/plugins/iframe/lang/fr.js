@@ -1,0 +1,1 @@
+CKEDITOR.plugins.setLang("iframe","fr",{border:"Afficher une bordure de la IFrame",noUrl:"Veuillez entrer l'adresse du lien de la IFrame",scrolling:"Permettre \xe0 la barre de d\xe9filement",title:"Propri\xe9t\xe9s de la IFrame",toolbar:"IFrame"});

@@ -1,0 +1,54 @@
+<%= form_for @business_contact, url: { action: "create_bussines_contact" }, remote: "true", html: { class: 'form-horizontal send_ajax', role: :form, 'data-model' => @business_contact.class.name.underscore, id: 'form-business-contact' } do |f| %>
+<div class="status-message" style="display:none;">Obrigado, recebemos seu contato aguarde o retorno!</div>
+
+  <div class="form-group">
+    <div>
+      <%= f.text_field :company_name,  class: 'form-control input-nome-empresa', placeholder: 'Empresa*', id: 'nomeEmpresa' %>
+      <span class="help-block"></span>
+    </div>
+  </div>
+  <div class="form-group">
+    <div>
+      <%= f.text_field :responsible_person,  class: 'form-control input-nome-responsavel', placeholder: 'Nome*', id: 'nomeResponsavel' %>
+      <span class="help-block"></span>
+    </div>
+  </div>
+  <div class="form-group">
+    <div>
+      <%= f.email_field :email,  class: 'form-control input-email', placeholder: 'E-mail*', id: 'email' %>
+      <span class="help-block"></span>
+    </div>
+  </div>
+  <div class="form-group">
+    <div>
+      <%= f.text_field :phone,  class: 'form-control input-telefone phone-format', placeholder: 'Telefone*', id: 'telefone' %>
+      <span class="help-block"></span>
+    </div>
+  </div>
+  <div class="form-group">
+    <div>
+      <span class="sr-only"><%= f.label :subject %></span>
+      <%= f.collection_select(:kind_event_id, KindEvent.all.order(:name), :id, :name, :prompt => 'Tipo de evento*') %>
+      <span class="help-block"></span>
+    </div>
+  </div>
+  <div class="form-group">
+    <div>
+      <%= f.text_field :date,  class: 'form-control input-data', placeholder: 'Data do Evento*', id: 'datetimepicker' %>
+      <span class="help-block"></span>
+    </div>
+  </div>
+  <div class="form-group">
+    <div>
+      <%= f.number_field :number_participants,  class: 'form-control input-participantes', placeholder: 'Número de participantes*', id: 'datetimepicker' %>
+      <span class="help-block"></span>
+    </div>
+  </div>
+  <div class="form-group">
+    <div>
+      <%= f.text_area :observations,  class: 'form-control input-observacoes', placeholder: 'Fale mais sobre o evento*', id: 'datetimepicker' %>
+      <span class="help-block"></span>
+    </div>
+  </div>
+  <%= f.submit 'Enviar', class: 'btn' %>
+<% end %>

@@ -1,0 +1,60 @@
+<section class="busca-holder">
+  <div class="container">
+    <div class="row title-row">
+      <div class="col-sm-7 col-xs-12">
+        <h1>Resultado da Busca</h1>
+      </div>
+    </div>
+
+    <div class="row busca-headline">
+      <div class="col-sm-12 col-xs-12">
+        <p class="busca-tag">Busca:</p><span><%= params[:term] %></span>
+        <hr>
+        <p class="busca-total">Foram encontrados <span><%= @search.total %></span> resultados.</p>
+      </div>
+    </div>
+
+    <div class="row busca-resultado">
+      <% @search.each_hit_with_result do |hit, item| -%>
+      <div class="col-sm-12 col-xs-12">
+        <a href="<%= events_show_path item %>">
+          <div class="busca-resultado-holder">
+            <div class="media">
+              <div class="media-left media-middle busca-resultado-image">
+                <%= image_tag item.image.url(:micro), class: 'center-block', alt: 'Thumb Busca Teatro Santander' %>
+              </div>
+              <div class="media-body busca-resultado-infos">
+                <p class="resultado-head">Programação</p>
+                <p class="resultado-title">
+                  <% if hit.highlights(:title).present? %>
+                  <% hit.highlights(:title).each do |highlight| %>
+                  <%= raw highlight.format { |word| highlight_search word } %>
+                  <% end %>
+                  <% else %>
+                  <%= item.title %>
+                  <% end %>
+                </p>
+                <p class="resultado-text"><%= h truncate(ActionView::Base.full_sanitizer.sanitize(item.description), :length => 80, :separator => ' ') %></p>
+                </p>
+              </div>
+            </div>
+          </div>
+        </a>
+      </div>
+      <% end %>
+
+      <div class="col-sm-12 col-xs-12">
+        <div class="pagination-holder">
+          <%= will_paginate @search.hits,
+                  :class=> "pagination center-block",
+                  :next_label => "<span class='icon-next'></span>",
+                  :previous_label => "<span class='icon-prev'></span>",
+                  :inner_window => 1,
+                  :outer_window => 0 %>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- <span class="highlight-busca">Queen</span> -->

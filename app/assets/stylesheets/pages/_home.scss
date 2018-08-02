@@ -1,0 +1,318 @@
+.home-banner{
+  background-color: #000;
+  padding-top: 25px;
+}
+.home-programacao {
+  position: relative;
+  padding-top: 20px;
+  z-index: 99;
+  margin-top: -20px;
+  margin-bottom: 80px;
+  background-color: #000;
+
+  .card-container {
+    position: relative;
+    padding-bottom: 40px;
+    .title-programacao {
+      h1 {
+        display: inline-block;
+        color: #fff;
+        margin: 0;
+        border-left: 2px solid #fff;
+        padding: 0px 0 22px 18px;
+        position: relative;
+        right: -64%;
+        letter-spacing: 6px;
+      }
+    }
+  }
+}
+
+#slider-secundario-box{
+  margin-top: -40px;
+  margin-bottom: 40px;
+}
+
+.slider-secundario {
+  top: 0;
+  position: relative;
+
+  .slider-secundario-title {
+    display: inline-block;
+    color: $red;
+    margin: 0 0 40px;
+    padding: 0px 18px 100px 0;
+    letter-spacing: 6px;
+    position: relative;
+    &:after{
+      content: '';
+      position: absolute;
+      right: -30px !important;
+      top: 60px !important;
+      background: asset-url("new-version/after-title-three.png") no-repeat;
+      width: 310px;
+      height: 51px;
+      border: none;
+    }
+    span {
+      font-weight: $black;
+      font-size: 1em;
+    }
+  }
+
+  .carousel {
+    .carousel-inner {
+      .item {
+        min-height: 400px;
+        background-color: red;
+        background-color: transparent;
+
+        &:nth-child(1){
+          .carousel-caption .slider-data h2{
+            &:before{
+              content: '1';
+            }
+          }
+        }
+        &:nth-child(2){
+          .carousel-caption .slider-data h2{
+            &:before{
+              content: '2';
+            }
+          }
+        }
+        &:nth-child(3){
+          .carousel-caption .slider-data h2{
+            &:before{
+              content: '3';
+            }
+          }
+        }
+        &:nth-child(4){
+          .carousel-caption .slider-data h2{
+            &:before{
+              content: '4';
+            }
+          }
+        }
+        &:nth-child(5){
+          .carousel-caption .slider-data h2{
+            &:before{
+              content: '5';
+            }
+          }
+        }   
+        &:nth-child(6){
+          .carousel-caption .slider-data h2{
+            &:before{
+              content: '6';
+            }
+          }
+        }                                        
+
+        .carousel-caption {
+          bottom: 0;
+          left: 13%;
+          right: 21%;
+          text-shadow: none;
+          padding-bottom: 0;
+          .slider-n {
+            position: relative;
+            top: 0;
+
+            img {
+              animation-delay: 1s;
+              position: relative;
+            }
+          }
+
+          .slider-data {
+            position: relative;
+            top: 40px;
+            left: -44px;
+
+            h2 {
+              text-transform: uppercase;
+              text-align: left;
+              color: #949494;
+              animation-delay: .2s;
+              margin: 0 0 10px;
+              position: relative;
+              &:before{
+                position: absolute;
+                left: -70px;
+                color: #e12222;
+                font-size: 78px;
+              }
+            }
+
+            p {
+              text-align: left;
+              text-shadow: none;
+              color: #949494;
+              font-weight: $light;
+              font-size: $font-18;
+              margin: 0 0 20px;
+              animation-delay: .2s;
+            }
+
+            a {
+              font-size: $font-18;
+              display: inline-block;
+              animation-delay: .3s;
+              padding: 15px 30px;
+              border: 1px solid #e12222;
+              color: #e12222;
+              background-color: transparent;
+              float: left;
+              transition: all .3s ease-in-out;
+              -webkit-transition: all .3s ease-in-out;
+              -moz-transition: all .3s ease-in-out;
+              &:hover{
+                background-color: #e12222;
+                color: #FFF;
+              }
+            }
+          }
+        }
+      }
+    }
+    .carousel-indicators {
+      bottom: 3px;
+
+      li {
+        margin: 0 4px;
+        background-color: #7b7b7b;
+        border: none;
+        &.active {
+          background-color: #e00303;
+        }
+      }
+    }
+  }
+}
+
+@media(max-width: 1500px) {
+  .slider-secundario {
+    .carousel {
+      .carousel-inner {
+        .item {
+          .carousel-caption {
+            top: 0;
+            .slider-data h2{
+              &:before{
+                left: -50px;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+@media(max-width: 1200px) {
+  .slider-secundario {
+    .carousel {
+      .carousel-inner {
+        .item {
+          .carousel-caption {
+            .slider-data{
+              top: 0;
+              h2{
+                &:before{
+                  content: initial !important;
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+@media(max-width: $screen-sm-max) {
+  .home-programacao {
+    top: -6px;
+    .card-container {
+      left: 0;
+      .title-programacao {
+        h1 {
+          right: -24%;
+        }
+      }
+    }
+  }
+
+  .slider-secundario {
+    .carousel {
+      .carousel-inner {
+        .item {
+          .carousel-caption {
+            bottom: initial;
+            .slider-data {
+              top: 20px;
+              left: initial;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: $screen-xs-max) {
+  .home-programacao {
+    top: 0px;
+
+    .card-container {
+      left: 0;
+      .title-programacao {
+        h1 {
+          font-size: 26px;
+          width: 100%;
+          word-break: break-all;
+          right: 0;
+        }
+      }
+    }
+  }
+
+  .slider-secundario {
+    .slider-secundario-title:after{
+      content: initial;
+    }
+    .slider-secundario-title {
+      font-size: 2em;
+      margin-top: 15px;
+      border: none;
+    }
+    .carousel {
+      .carousel-inner {
+        .item {
+          .carousel-caption {
+            bottom: initial;
+            .slider-data {
+              top: 20px;
+              left: initial;
+              h2 {
+                font-size: 1.5em;
+              }
+
+              p {
+                font-size: 16px;
+              }
+
+              a {
+                font-size: $font-18;
+                animation-delay: 4s;
+                width: 168px;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,1 @@
+CKEDITOR.plugins.setLang("font","sk",{fontSize:{label:"Ve\u013ekos\u0165",voiceLabel:"Ve\u013ekos\u0165 p\xedsma",panelTitle:"Ve\u013ekos\u0165 p\xedsma"},label:"Font",panelTitle:"N\xe1zov fontu",voiceLabel:"Font"});

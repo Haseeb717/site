@@ -1,0 +1,8 @@
+<%= form_for(@newsletter, remote: "true", html: {id: "form-newsletter", role: :form, 'data-model' => @newsletter.class.name.downcase, class: 'send_ajax'}) do |f| %>
+<div class="status-message" style="display:none;">E-mail cadastrado com sucesso</div>
+<div>
+  <%= f.email_field :email, :placeholder => "Digite seu e-mail", :class => 'form-control input-newsletter', :required => true %>
+  <span class="help-block"></span>
+</div>
+<%= f.submit "Enviar", :class => 'btn' %>
+<% end %>

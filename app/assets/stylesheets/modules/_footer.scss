@@ -1,0 +1,274 @@
+footer {
+  margin: 0 0 0;
+  padding: 25px 0 0;
+  background-color: #000;
+
+  .footer-menu{
+    margin: 50px 0;
+    li{
+      display: inline-block;
+      width: 24%;
+    }
+    a{
+      text-transform: uppercase;
+      color: #c1c1c1;
+      font-weight: 700;
+      font-size: 13px;
+      position: relative;
+      &.active{
+        color: #e00303;
+        &:after{
+          content: '';
+          position: absolute;
+          left: 0;
+          bottom: -10px;
+          background: asset-url('new-version/after-menu-footer.png') no-repeat;
+          background-position: center;
+          width: 100%;
+          height: 4px;
+        }
+      }
+    }
+  }
+
+  .col-newsletter {
+    a {
+      text-transform: uppercase;
+      text-decoration: underline;
+      color: #fff;
+      font-size: $font-13;
+    }
+    .input-group {
+      width: 100%;
+      margin: 20px 0 0;
+
+      .input-newsletter {
+        border: none;
+        border-bottom: 1px solid #8c8c8c;
+        background-color: transparent;
+        font-size: 3em;
+        font-weight: $light;
+        color: #4c4b4b;
+        height: 85px;
+        padding: 0;
+        border-radius: 0;
+        display: block;
+        margin-bottom: 20px;
+
+        &::-webkit-input-placeholder {
+          color: #4c4b4b;
+        }
+
+        &:-moz-placeholder {
+          color: #4c4b4b;
+        }
+
+        &::-moz-placeholder {
+          color: #4c4b4b;
+        }
+
+        &:-ms-input-placeholder {
+          color: #4c4b4b;
+        }
+      }
+
+      .btn {
+        padding: 9px 12px;
+        width: 185px;
+        background-color: transparent;
+        border: 1px solid #8c8c8c;
+        display: inline-block;
+        float: right;
+        font-weight: $regular;
+        color: #8c8c8c;
+        transition: all .3s linear;
+
+        &:hover {
+          background-color: #8c8c8c;
+          color: #fff;
+        }
+      }
+    }
+
+    p {
+      color: #999;
+      margin: 5px 5px 28px;
+    }
+
+    .status-message {
+      display: block;
+      width: 100%;
+      height: 100%;
+      position: absolute;
+      z-index: 9;
+      background-color: #272727;
+      text-align: center;
+      color: #999999;
+      font-weight: 900;
+      font-size: 30px;
+      font-style: italic;
+      padding: 88px 0;
+    }
+  }
+
+  .col-social {
+    h2 {
+      font-size: 1.625em;
+      color: #fff;
+      margin-bottom: 10px;
+      font-weight: $regular;
+      text-transform: initial;
+    }
+    p {
+      color: #999999;
+      margin-bottom: 10px;
+    }
+
+    img {
+      margin-right: 15px;
+    }
+
+    .footer-endereco {
+      position: relative;
+      margin-top: 22px;
+    }
+
+    .footer-alvara {
+      color: #999999;
+      font-size: 11px;
+      text-align: left;
+      margin-top: 30px;
+      padding-bottom: 7px;
+      font-style: italic;
+      letter-spacing: 0.4px;
+    }
+    .footer-policy{
+      a{
+        color: #999999;
+        font-size: 11px;
+        text-decoration: underline;
+      }
+    }
+  }
+
+  .footer-partners {
+    .naming-col, .realizations-col {
+      margin-top: 14px;
+
+      .footer-partners-text {
+        color: #686868;
+        font-style: italic;
+        display: block;
+      }
+
+      img {
+        margin-right: 20px;
+        display: inline-block;
+      }
+    }
+
+    .complexo-col {
+      p {
+        color: #686868;
+        font-size: 12px;
+        padding-bottom: 7px;
+        letter-spacing: 1px;
+      }
+    }
+
+    .logo-planb-col {
+      position: relative;
+      top: 45px;
+    }
+  }
+}
+@media (min-width: 1500px) {
+  footer{
+    background: asset-url('new-version/bg-footer.png') no-repeat #000;
+    background-position: 115% center; 
+  }
+}
+@media (min-width: 1700px) {
+  footer{
+    background: asset-url('new-version/bg-footer.png') no-repeat #000;
+    background-color: #000;
+    background-position: right center; 
+  }
+}
+
+@media (max-width: $screen-sm-max) {
+  footer .footer-menu{
+    padding-left: 0;
+    margin: 30px 0 10px;
+    li{
+      width: 100%;
+      display: block;
+      text-align: center;
+      margin-bottom: 15px;
+    }  
+  }
+}
+  @media (max-width: $screen-xs-max) {
+  footer {
+    margin: 20px 0 0;
+    padding: 20px 0 0;
+
+    .footer-partners {
+
+      .logo-col {
+        .logo-santander-teatro {
+          margin: 25px auto;
+        }
+      }
+
+      .naming-col, .realizations-col {
+        margin-top: 0;
+
+        .footer-partners-text {
+          display: block;
+          margin: 3px 0 0;
+          text-align: center;
+        }
+
+        img {
+          display: block;
+          margin: 12px auto 25px;
+        }
+      }
+
+      .logo-planb-col {
+        position: relative;
+        top: 0;
+        padding-bottom: 10px;
+      }
+    }
+
+    .col-newsletter {
+      .input-group {
+        width: 100%;
+        margin: 10px 0 0;
+
+        .input-newsletter {
+          font-size: 2em;
+        }
+
+        .btn {
+          float: none;
+          width: 100%;
+        }
+      }
+
+      p {
+        margin: 10px 0 18px;
+      }
+    }
+
+    .col-social {
+
+      .footer-endereco {
+        top: 0;
+        margin-top: 45px;
+      }
+    }
+  }
+}

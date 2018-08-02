@@ -1,0 +1,1 @@
+CKEDITOR.plugins.setLang("smiley","fr",{options:"Options des \xe9moticones",title:"Ins\xe9rer un \xe9moticone",toolbar:"\xc9moticones"});

@@ -1,0 +1,110 @@
+
+<section class="event-holder">
+
+  <div class="container">
+    <% if @schedules.present? %>
+        <%= render 'shared/calendar' %>
+    <% end %>
+  </div>
+
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-md-6 col-sm-12 col-xs-12 no-padding event-image-col">
+        <div class="destaque-holder">
+          <div class="destaque-title-holder <%= top_title if @event.id.to_i == 23 %>">
+            <h1 class="event-title"><%= @event.title %></h1>
+            <h2 class="event-subtitle"><%= @event.subtitle %></h2>
+          </div>
+          <%= image_tag @event.image.url(:large), class: 'img-responsive event-image', alt: 'Imagem Destaque Evento' %>
+          <div class="destaque-shadow"></div>
+        </div>
+        <div class="map-holder hidden-xs pull-right">
+          <%= image_tag @event.map.url(:thumb), class: 'img-responsive pull-right event-map', alt: 'Imagem Destaque Evento' %>
+        </div>
+      </div>
+
+      <div class="col-md-5 col-sm-12 col-xs-12 no-padding event-about-col">
+        <div class="event-text-box">
+          <%= @event.description.html_safe %>
+        </div>
+
+        <div class="event-ticket-box">
+          <div class="row">
+            <div class="col-sm-6 col-xs-12">
+              <h3>Sessões</h3>
+              <%= @event.summary_session.html_safe %>
+
+              <p class="classificacao-title">Classificação</p>
+              <div class="media">
+                <div class="media-left media-middle">
+                  <%= image_tag @event.age_rating.icon(:mini), class: 'event-classification', alt: 'Imagem Classificação Evento' %>
+                </div>
+                <div class="media-body">
+                  <p><%= @event.age_rating.name %></p>
+                </div>
+              </div>
+              <p><strong>Duração:</strong> <%= @event.duration %></p>
+            </div>
+            <% if @event.sales_channels.present? %>
+            <div class="col-sm-6 col-xs-12">
+              <h3>Comprar Ingressos</h3>
+              <% @event.sales_channels.each do |item| %>
+                <%= link_to item.name, item.url, :target => '_blank', :class => 'btn btn-red', :onclick =>
+                "gtag('event', 'Entretix_Botao', {'send_to': 'UA-74766673-1', 'event_category': 'clique', 'event_label': 'botao'});"  %>
+                <% if item.ask_for_your_card %>
+                    <p class="text-peca-cartao">Quem é cliente Santander tem 30% de desconto no ingresso.</p>
+                    <%= link_to "Peça seu cartão", "https://www.santander.com.br/br/abrir-conta-corrente", :target => '_blank', :class => 'btn btn-shadow', :onclick =>
+                    "gtag('event', 'Peca_Seu_Cartao', {'send_to': 'UA-74766673-1', 'event_category': 'clique', 'event_label': 'botao'});"  %>
+                <% end %>
+              <% end %>
+            </div>
+            <% end %>
+          </div>
+        </div>
+
+        <div class="event-value-box">
+          <%= @event.price_ticket.html_safe %>
+        </div>
+
+        <div class="event-bilheteria-box">
+          <div class="row">
+            <div class="col-sm-6 col-xs-12">
+              <h3>Bilheteria</h3>
+              <p>
+                Bilheteria Teatro Santander Complexo WT JK
+              </p>
+
+              <p class="horario-title">Horário de Funcionamento</p>
+
+              <p>
+                Domingo a Quinta: 12h às 20h
+                ou até inicio do espetáculo.
+                Sexta e Sábado: 12h às 22h
+              </p>
+            </div>
+            <% unless @event.id == 9 #event id for 'my fair lady' %>
+            <div class="col-sm-6 col-xs-12">
+              <p class="beneficios-title">Benefícios e Descontos do Teatro</p>
+              <p>Para saber todas as informações a respeito de meia-entrada e descontos de patrocinadores, consulte nossa <a href="<%= box_office_path %>">política de descontos.</a></p>
+            </div>
+            <% end %>
+          </div>
+        </div>
+
+        <% if @event.advice.present? %>
+        <div class="event-info-box">
+          <h3>Informações Importantes:</h3>
+          <%= @event.advice.html_safe %>
+        </div>
+        <% end %>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- CRAZY EGG -->
+<script type="text/javascript">
+setTimeout(function(){var a=document.createElement("script");
+var b=document.getElementsByTagName("script")[0];
+a.src=document.location.protocol+"//script.crazyegg.com/pages/scripts/0025/6845.js?"+Math.floor(new Date().getTime()/3600000);
+a.async=true;a.type="text/javascript";b.parentNode.insertBefore(a,b)}, 1);
+</script>

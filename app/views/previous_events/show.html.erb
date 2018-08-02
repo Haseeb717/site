@@ -1,0 +1,63 @@
+
+<section class="event-holder aconteceu">
+
+  <div class="container">
+    <div class="row title-row">
+      <div class="col-sm-8 col-md-6 col-lg-5 col-xs-12">
+        <h1>Aconteceu</h1>
+      </div>
+    </div>
+  </div>
+
+  <div class="container">
+    <div class="row">
+      <div class="col-md-7 col-sm-12 col-xs-12 no-padding event-image-col">
+
+        <% if !@event.previous_events_image.empty? %>
+        <!-- Swiper -->
+        <div class="swiper-container gallery-top swiper-container-aconteceu">
+            <div class="swiper-wrapper">
+                <% @event.previous_events_image.each do |image| %>
+                  <div class="swiper-slide" style="background-image:url(<%= image.image %>)"></div>
+                <% end %>
+            </div>
+            <!-- Add Arrows -->
+            <div class="swiper-button-next swiper-button-white"></div>
+            <div class="swiper-button-prev swiper-button-white"></div>
+        </div>
+        <div class="swiper-container gallery-thumbs gallery-thumbs-aconteceu">
+            <div class="swiper-wrapper">
+                <% @event.previous_events_image.each do |image| %>
+                  <div class="swiper-slide" style="background-image:url(<%= image.image(:micro) %>)"></div>
+                <% end %>
+            </div>
+        </div>
+        <% else %>
+            <%= image_tag @event.image.url, class: 'img-responsive img-destaque', alt: 'Destaque 1' %>
+        <% end %>
+      </div>
+
+      <div class="col-md-4 col-sm-12 col-xs-12 no-padding event-about-col">
+        <div class="event-text-box">
+          <h3 class="no-padding"><%= @event.title %></h3>
+          <h4>
+            <%= get_range_of_previous_event_dates @event %>
+          </h4>
+          <%= @event.description.html_safe %>
+        </div>
+
+        <% if @event.informations.present? %>
+        <div class="event-info-box">
+          <h3>Informações</h3>
+          <%= @event.informations.html_safe %>
+        </div>
+        <% end %>
+        <div class="event-share">
+          Compartilhe :
+          <a href="http://www.facebook.com/share.php?u=<%= previous_events_show_url(@event)  %>" class="icon-facebook-share" target="_blank"></a>
+          <a href="https://twitter.com/share" class="icon-twitter-share" target="_blank"></a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

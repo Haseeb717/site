@@ -1,0 +1,138 @@
+
+//Botão padrão com efeito de pulse e variações de cor - ex: destaque home
+
+.btn {
+    font-size: $font-18;
+    font-weight: $black;
+    text-transform: uppercase;
+    text-decoration: none;
+    text-align: center;
+    padding: 12.5px 0;
+    display: block;
+    margin: 6px 0 0;
+    border: none;
+    border-radius: 0;
+
+    &.btn-white {
+      color: #303030;
+      background-color: #FFF;
+    }
+
+    &.btn-dark {
+      color: #FFF;
+      background-color: #380001;
+    }
+
+    &.btn-red {
+      color: #FFF;
+      background-color: $red;
+    }
+
+    &.btn-shadow{
+      color: $red;
+      border: 2px solid $red;
+      background-color: transparent; 
+    }
+
+    &:hover {
+      text-decoration: none;
+      font-weight: $black;
+    }
+}
+
+@-webkit-keyframes white-pulse {
+  50% {
+    background-color: rgba(255, 255, 255, 0.8);
+  }
+}
+
+@keyframes white-pulse {
+  50% {
+    background-color: rgba(255, 255, 255, 0.8);
+  }
+}
+
+@-webkit-keyframes dark-pulse {
+  50% {
+    background-color: rgba(48, 48, 48, 0.8);
+  }
+}
+
+@keyframes dark-pulse {
+  50% {
+    background-color: rgba(48, 48, 48, 0.8);
+  }
+}
+
+@-webkit-keyframes red-pulse {
+  50% {
+    background-color: rgba(234, 34, 40, 0.8);
+  }
+}
+
+@keyframes red-pulse {
+  50% {
+    background-color: rgba(234, 34, 40, 0.8);
+  }
+}
+
+
+.effect-pulse {
+  display: block;
+  vertical-align: middle;
+  -webkit-transform: translateZ(0);
+  transform: translateZ(0);
+  box-shadow: 0 0 1px rgba(0, 0, 0, 0);
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+  -moz-osx-font-smoothing: grayscale;
+  overflow: hidden;
+  -webkit-transition-duration: 0.5s;
+  transition-duration: 0.5s;
+  -webkit-transition-property: color, background-color;
+  transition-property: color, background-color;
+  font-weight: $black;
+
+  &:hover, &:focus, &:active {
+    -webkit-animation-duration: 1s;
+    animation-duration: 1s;
+    -webkit-animation-delay: 0.5s;
+    animation-delay: 0.5s;
+    -webkit-animation-timing-function: linear;
+    animation-timing-function: linear;
+    -webkit-animation-iteration-count: infinite;
+    animation-iteration-count: infinite;
+    font-weight: $black;
+  }
+
+  &.btn-white {
+    &:hover, &:focus, &:active {
+      -webkit-animation-name: dark-pulse;
+      animation-name: dark-pulse;
+      background-color: #303030;
+      background-color: #303030;
+      color: white;
+    }
+  }
+
+  &.btn-dark {
+    &:hover, &:focus, &:active {
+      -webkit-animation-name: white-pulse;
+      animation-name: white-pulse;
+      background-color: #FFF;
+      background-color: #FFF;
+      color: #380001;
+    }
+  }
+
+  &.btn-red {
+    &:hover, &:focus, &:active {
+      -webkit-animation-name: red-pulse;
+      animation-name: red-pulse;
+      background-color: #FFF;
+      background-color: #FFF;
+      color: #380001;
+    }
+  }
+
+}
